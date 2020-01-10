@@ -985,8 +985,19 @@ function ItemsTabClass:DeleteItem(item)
 			end
 		end
 	end
+	local item = self.items[item.id];
 	self.items[item.id] = nil
 	self:PopulateSlots()
+	for _, mod in ipairs(item.baseModList) do
+		if mod.value == 1 then
+			for _, tag in ipairs(mod) do
+				if tag.type and tag.type == "Condition" then
+					local currCond = "condition"..tag.var
+					self.build.configTab:DeleteCondition(currCond)
+				end
+			end
+		end
+	end
 	self:AddUndoState()
 end
 

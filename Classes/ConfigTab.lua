@@ -386,6 +386,20 @@ function ConfigTabClass:BuildModList()
 	end
 end
 
+function ConfigTabClass:DeleteCondition(cond)
+	for _, varData in ipairs(varList) do
+		if varData.var == cond then
+			print(inspect(varData))
+			if varData.type == "check" then
+				self.input[varData.var] = false
+			else
+				self.input[varData.var] = ""
+			end
+			break
+		end
+	end
+end
+
 function ConfigTabClass:ImportCalcSettings()
 	local input = self.input
 	local calcsInput = self.build.calcsTab.input
