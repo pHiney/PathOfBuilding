@@ -5,7 +5,7 @@
 -- Program entry point; loads and runs the Main module within a protected environment
 --
 
-SetWindowTitle("Path of Building")
+SetWindowTitle("Path of Building - pHiney:Live")
 ConExecute("set vid_mode 8")
 ConExecute("set vid_resizable 3")
 
