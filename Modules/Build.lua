@@ -838,6 +838,9 @@ function buildMode:OnFrame(inputEvents)
 	if main.ThousandsSep ~= self.lastThousandsSep then
 		self:RefreshStatList()
 	end
+	if main.DecimalPoint ~= self.lastDecimalPoint then
+		self:RefreshStatList()
+	end
 
 	-- Update contents of main skill dropdowns
 	self:RefreshSkillSelectControls(self.controls, self.mainSocketGroup, "")
@@ -1125,6 +1128,7 @@ function buildMode:FormatStat(statData, statVal)
 	end
 	self.lastShowThousandsSidebar = main.showThousandsSidebar
 	self.lastThousandsSep = main.ThousandsSep
+	self.lastDecimalPoint = main.DecimalPoint
 	return valStr
 end
 

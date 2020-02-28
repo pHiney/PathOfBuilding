@@ -458,8 +458,13 @@ function main:LoadSettings()
 				end
 				self.showThousandsSidebar = node.attrib.showThousandsSidebar == "true"
 				self.showThousandsCalcs = node.attrib.showThousandsCalcs == "true"
-				self.ThousandsSep = node.attrib.ThousandsSep
-				self.DecimalPoint = node.attrib.DecimalPoint
+
+				if node.attrib.ThousandsSep then
+					self.ThousandsSep = node.attrib.ThousandsSep
+				end -- else leave at default
+				if node.attrib.DecimalPoint then
+					self.DecimalPoint = node.attrib.DecimalPoint
+				end -- else leave at default
 			end
 		end
 	end
@@ -552,9 +557,12 @@ function main:OpenOptionsPopup()
 		self.showThousandsCalcs = state
 	end)
 	controls.thousandsCalcs.state = self.showThousandsCalcs
+	
 	controls.thousandsSepLabel = new("LabelControl", {"TOPRIGHT",nil,"TOPLEFT"}, 210, 114, 0, 16, "^7Thousands separator:")
-	controls.thousandsSep = new("EditControl", {"TOPLEFT",nil,"TOPLEFT"}, 280, 114, 20, 18)
-	controls.thousandsSep:SetText(self.ThousandsSep)
+	controls.thousandsSep = new("EditControl", {"TOPLEFT",nil,"TOPLEFT"}, 280, 115, 20, 18, self.ThousandsSep, nil, nil, 1)
+	-- Turned off as I can't find where to change it (may not be sensible to change it)
+	-- controls.decimalPointLabel = new("LabelControl", {"TOPRIGHT",nil,"TOPLEFT"}, 210, 132, 0, 16, "^7Decimal separator:")
+	-- controls.decimalPoint = new("EditControl", {"TOPLEFT",nil,"TOPLEFT"}, 280, 134, 20, 18, self.DecimalPoint, nil, nil, 1)
 
 	local initialNodePowerTheme = self.nodePowerTheme
 	local initialThousandsSidebar = self.showThousandsSidebar
@@ -579,7 +587,10 @@ function main:OpenOptionsPopup()
 			self.modes.LIST:BuildList()
 		end
 		if controls.thousandsSep.buf:match("%p") then
-			self.ThousandsSep = controls.thousandsSep.buf:sub(1,1)
+			self.ThousandsSep = controls.thousandsSep.buf
+		end
+		if controls.decimalPoint.buf:match("%p") then
+			self.DecimalPoint = controls.decimalPoint.buf
 		end
 		main:ClosePopup()
 	end)
