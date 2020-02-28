@@ -200,6 +200,10 @@ the "Releases" section of the GitHub page.]])
 
 	self.buildSortMode = "NAME"
 	self.nodePowerTheme = "RED/BLUE"
+	self.showThousandsSidebar = true
+	self.showThousandsCalcs = true
+	self.ThousandsSep = ","
+	self.DecimalPoint = "."
 
 	self:SetMode("BUILD", false, "Unnamed build")
 
@@ -454,6 +458,8 @@ function main:LoadSettings()
 				end
 				self.showThousandsSidebar = node.attrib.showThousandsSidebar == "true"
 				self.showThousandsCalcs = node.attrib.showThousandsCalcs == "true"
+				self.ThousandsSep = node.attrib.ThousandsSep
+				self.DecimalPoint = node.attrib.DecimalPoint
 			end
 		end
 	end
@@ -498,6 +504,8 @@ function main:SaveSettings()
 		nodePowerTheme = self.nodePowerTheme,
 		showThousandsSidebar = tostring(self.showThousandsSidebar),
 		showThousandsCalcs = tostring(self.showThousandsCalcs),
+		ThousandsSep = self.ThousandsSep,
+		DecimalPoint = self.DecimalPoint,
 	} })
 	local res, errMsg = common.xml.SaveXMLFile(setXML, self.userPath.."Settings.xml")
 	if not res then
@@ -535,19 +543,25 @@ function main:OpenOptionsPopup()
 	controls.nodePowerThemeLabel = new("LabelControl", {"RIGHT",controls.nodePowerTheme,"LEFT"}, -4, 0, 0, 16, "^7Node Power colours:")
 	controls.nodePowerTheme.tooltipText = "Changes the colour scheme used for the node power display on the passive tree."
 	controls.nodePowerTheme:SelByValue(self.nodePowerTheme, "theme")
-	controls.thousandsLabel = new("LabelControl", {"TOPRIGHT",nil,"TOPLEFT"}, 200, 94, 0, 16, "^7Show thousands separators in:")
-	controls.thousandsSidebar = new("CheckBoxControl", {"TOPLEFT",nil,"TOPLEFT"}, 270, 92, 20, "Sidebar:", function(state)
+	controls.thousandsLabel = new("LabelControl", {"TOPRIGHT",nil,"TOPLEFT"}, 210, 94, 0, 16, "^7Show thousands separators in:")
+	controls.thousandsSidebar = new("CheckBoxControl", {"TOPLEFT",nil,"TOPLEFT"}, 280, 92, 20, "Sidebar:", function(state)
 		self.showThousandsSidebar = state
 	end)
 	controls.thousandsSidebar.state = self.showThousandsSidebar
-	controls.thousandsCalcs = new("CheckBoxControl", {"TOPLEFT",nil,"TOPLEFT"}, 370, 92, 20, "Calcs tab:", function(state)
+	controls.thousandsCalcs = new("CheckBoxControl", {"TOPLEFT",nil,"TOPLEFT"}, 380, 92, 20, "Calcs tab:", function(state)
 		self.showThousandsCalcs = state
 	end)
 	controls.thousandsCalcs.state = self.showThousandsCalcs
+	controls.thousandsSepLabel = new("LabelControl", {"TOPRIGHT",nil,"TOPLEFT"}, 210, 114, 0, 16, "^7Thousands separator:")
+	controls.thousandsSep = new("EditControl", {"TOPLEFT",nil,"TOPLEFT"}, 280, 114, 20, 18)
+	controls.thousandsSep:SetText(self.ThousandsSep)
+
 	local initialNodePowerTheme = self.nodePowerTheme
 	local initialThousandsSidebar = self.showThousandsSidebar
 	local initialThousandsCalcs = self.showThousandsCalcs
-	controls.save = new("ButtonControl", nil, -45, 120, 80, 20, "Save", function()
+	local initialThousandsSep = self.ThousandsSep
+	local initialDecimalPoint = self.DecimalPoint
+	controls.save = new("ButtonControl", nil, -45, 160, 80, 20, "Save", function()
 		if controls.proxyURL.buf:match("%w") then
 			launch.proxyURL = controls.proxyType.list[controls.proxyType.selIndex].scheme .. "://" .. controls.proxyURL.buf
 		else
@@ -564,15 +578,20 @@ function main:OpenOptionsPopup()
 		if self.mode == "LIST" then
 			self.modes.LIST:BuildList()
 		end
+		if controls.thousandsSep.buf:match("%p") then
+			self.ThousandsSep = controls.thousandsSep.buf:sub(1,1)
+		end
 		main:ClosePopup()
 	end)
-	controls.cancel = new("ButtonControl", nil, 45, 120, 80, 20, "Cancel", function()
+	controls.cancel = new("ButtonControl", nil, 45, 160, 80, 20, "Cancel", function()
 		self.nodePowerTheme = initialNodePowerTheme
 		self.showThousandsSidebar = initialThousandsSidebar
 		self.showThousandsCalcs = initialThousandsCalcs
+		self.ThousandsSep = initialThousandsSep 
+		self.DecimalPoint = initialDecimalPoint 
 		main:ClosePopup()
 	end)
-	self:OpenPopup(450, 150, "Options", controls, "save", nil, "cancel")
+	self:OpenPopup(450, 200, "Options", controls, "save", nil, "cancel")
 end
 
 function main:OpenUpdatePopup()
