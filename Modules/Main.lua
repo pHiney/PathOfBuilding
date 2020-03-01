@@ -456,8 +456,13 @@ function main:LoadSettings()
 				if node.attrib.nodePowerTheme then
 					self.nodePowerTheme = node.attrib.nodePowerTheme
 				end
-				self.showThousandsSidebar = node.attrib.showThousandsSidebar == "true"
-				self.showThousandsCalcs = node.attrib.showThousandsCalcs == "true"
+
+				if node.attrib.showThousandsSidebar then
+					self.showThousandsSidebar = node.attrib.showThousandsSidebar == "true"
+				end -- else leave at default
+				if node.attrib.showThousandsCalcs then
+					self.showThousandsCalcs = node.attrib.showThousandsCalcs == "true"
+				end -- else leave at default
 
 				if node.attrib.ThousandsSep then
 					self.ThousandsSep = node.attrib.ThousandsSep
