@@ -566,8 +566,8 @@ function main:OpenOptionsPopup()
 	controls.thousandsSepLabel = new("LabelControl", {"TOPRIGHT",nil,"TOPLEFT"}, 210, 114, 0, 16, "^7Thousands separator:")
 	controls.thousandsSep = new("EditControl", {"TOPLEFT",nil,"TOPLEFT"}, 280, 115, 20, 18, self.ThousandsSep, nil, nil, 1)
 	-- Turned off as I can't find where to change it (may not be sensible to change it)
-	-- controls.decimalPointLabel = new("LabelControl", {"TOPRIGHT",nil,"TOPLEFT"}, 210, 132, 0, 16, "^7Decimal separator:")
-	-- controls.decimalPoint = new("EditControl", {"TOPLEFT",nil,"TOPLEFT"}, 280, 134, 20, 18, self.DecimalPoint, nil, nil, 1)
+	controls.decimalPointLabel = new("LabelControl", {"TOPRIGHT",nil,"TOPLEFT"}, 210, 132, 0, 16, "^7Decimal separator:")
+	controls.decimalPoint = new("EditControl", {"TOPLEFT",nil,"TOPLEFT"}, 280, 134, 20, 18, self.DecimalPoint, nil, nil, 1)
 
 	local initialNodePowerTheme = self.nodePowerTheme
 	local initialThousandsSidebar = self.showThousandsSidebar
