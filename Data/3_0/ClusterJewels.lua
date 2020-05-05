@@ -402,8 +402,8 @@ return {
 					tag = "affliction_mace_and_staff_damage",
 					stats = { "Staff Attacks deal 12% increased Damage with Hits and Ailments", "Mace or Sceptre Attacks deal 12% increased Damage with Hits and Ailments" },
 					enchant = {
-						"Added Small Passive Skills grant: Mace or Sceptre Attacks deal 12% increased Damage with Hits and Ailments",
 						"Added Small Passive Skills grant: Staff Attacks deal 12% increased Damage with Hits and Ailments",
+						"Added Small Passive Skills grant: Mace or Sceptre Attacks deal 12% increased Damage with Hits and Ailments",
 					},
 				},
 				["affliction_dagger_and_claw_damage"] = {
@@ -413,8 +413,8 @@ return {
 					tag = "affliction_dagger_and_claw_damage",
 					stats = { "Claw Attacks deal 12% increased Damage with Hits and Ailments", "Dagger Attacks deal 12% increased Damage with Hits and Ailments" },
 					enchant = {
-						"Added Small Passive Skills grant: Dagger Attacks deal 12% increased Damage with Hits and Ailments",
 						"Added Small Passive Skills grant: Claw Attacks deal 12% increased Damage with Hits and Ailments",
+						"Added Small Passive Skills grant: Dagger Attacks deal 12% increased Damage with Hits and Ailments",
 					},
 				},
 				["affliction_bow_damage"] = {
@@ -422,9 +422,10 @@ return {
 					icon = "Art/2DArt/SkillIcons/passives/NodeBowDamage.png",
 					masteryIcon = "Art/2DArt/SkillIcons/passives/AltMasteryGroupBow.png",
 					tag = "affliction_bow_damage",
-					stats = { "12% increased Damage with Bows" },
+					stats = { "12% increased Damage with Bows", "12% increased Damage Over Time with Bow Skills" },
 					enchant = {
 						"Added Small Passive Skills grant: 12% increased Damage with Bows",
+						"Added Small Passive Skills grant: 12% increased Damage Over Time with Bow Skills",
 					},
 				},
 				["affliction_wand_damage"] = {
