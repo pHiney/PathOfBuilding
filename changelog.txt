@@ -1,3 +1,192 @@
+[1.4.170.7][2020/07/22]
+ * Fix crash related to the Siegebreaker belt
+ * Fix crash related to Dancing Dervish/Duo
+ * Fix Seismic Cry having incorrect calculations
+ * Fix Fist of War not using the proper Ailment multiplier
+ * Fix Chaos DoT Multiplier not showing up in Poison DoT Multi breakdown
+[1.4.170.6][2020/07/22]
+ * Add breakdown for Warcries and Fist of War
+ * Add calculation mode to select "Max hit" for Warcries
+ * Add count for the max number of Brand activations
+ * Add support for Slipstream from Harbinger of Time
+ * Add support for Burning Arrows Fire DoT Debuff
+ * Add support for alternate quality mod implicits
+ * Add support for Fevered Mind, Fortress Covenant and Quickening Covenant
+ * Add support for Emperors Vigilance
+ * Add support for Siegebreaker
+ * Add support for Brewed for Potency, Chilling Presence, Forbidden Words, Lead by Example, Pure Agony
+     and Disciples Cluster Notables
+ * Add output for DoT multiplier for Ailments
+ * Add Attack/Cast speed to the Node/Item Power sorting list
+ * Add override to simulate lucky hits on a character ("Your damage with Hits is Lucky")
+ * Change Ignite Calc Mode to Ailment Calc Mode
+ * Update mods on Impresence
+ * Fix Pressure Points Notable not working
+ * Fix Pride not working when importing an old build
+ * Fix imported influence items not working with the item crafter
+ * Fix Anoint-only nodes appearing in the "Top Node" power list
+ * Fix Wither not showing up for Eternal Suffering Cluster Notables
+ * Fix Eye of Malice not affecting Ignite damage
+ * Fix Minions being supported by Cast while Channelling or Arcanist Brand
+ * Fix the effects of Consecrated and Profane Ground to now work with Minions
+ * Fix damage scaling on Explosive Arrow
+ * Fix Evasion calculations
+[1.4.170.5][2020/07/16]
+ * Fix crash related to Vessel of Vinktar and flask effect
+ * Fix Rallying Cry not showing the proper configuration option to select number of nearby Allies
+ * Fix Saqawals Nest not scaling Aspect of the Avian properly on Allies
+ * Fix Ascendancy nodes showing up on the nearby strong nodes in the heatmap
+ * Fix crash related to opening old builds with a different tree version
+[1.4.170.4][2020/07/16]
+ * Fix bug where importing builds would change the boss configuration to be empty
+[1.4.170.3][2020/07/16]
+ * Add support for 3.11 Warcries and Exerted Attacks
+  * Warcry-related Exerted Attack Effect is calculated based on:
+    Average Damage of Exerted Attacks * Exerted Buff Scaling * Expected Uptime of Exerted Attacks.
+    Expected Uptime is based on number of Exerted Attacks contrasted with Attack Speed and impacted
+    by Warcry Cooldown Speed and Cast Time
+  * Full support:
+    * Ancestral Cry
+    * Enduring Cry
+    * Infernal Cry
+    * Intimidating Cry
+    * Rallying Cry
+    * Seismic Cry
+  * Not yet implemented:
+    * General's Cry
+ * Add full support for Arcanist Brand
+ * Add proper support for Cast while Channelling
+ * Add new Harvest uniques
+ * Add upgraded Harbinger uniques
+ * Add support to show Notable power calculation in a tooltip when crafting Cluster jewels
+ * Add AoE numbers for 56 skills
+ * Add full support for Bonechill (automatically applies for guaranteed sources of Chill)
+ * Add support to automatically Shock enemies with guaranteed sources of Shock
+ * Add in-depth breakdowns of Shock and Chill thresholds
+ * Add Scale of Esh Spectre
+ * Add full support for Agnostic, Eternal Youth and Imbalanced Guard Keystones
+ * Add partial support for Supreme Ego Keystone
+ * Add support for increased Effect of Arcane Surge
+ * Add support for Awakened Curse on Hit +1 Curse mod
+ * Add support for Rattling Bellow, Warning Call, Cry Wolf and Pressure Points Cluster Notables
+ * Add support for Warcry Power calculation with Configuration based override support
+ * Add support for reworked Berserker War Bringer Ascendancy node
+ * Add support for "each time you've Warcried Recently"
+ * Add support for "If you've changed Stance Recently"
+ * Add support for added Physical Damage from Spectral Wolves
+ * Add support for Herald of Ash Overkill DoT
+ * Add support for Vaal Molten Shell/Molten Shell reflect damage
+ * Add support for Rigwald's Command Rage DoT multiplier mod
+ * Add support for faster Damaging Ailments mod on Malevolence Watcher's Eye
+ * Add support for Emberwake's +1 Ignite mod
+ * Add support for Wintertide Brand gem quality
+ * Add support for Charged Mines Support gem quality
+ * Add support for Blind on the player
+ * Add support to hide items in the unique list by stat and level requirements
+ * Add support to highlight nodes by per-point and best node
+ * Add the ability to change the eHP calculation mode between spell, attack and more
+ * Add a breakdown on Evasion for Melee and Projectile Attacks
+ * Move Pride's effect drop-down to the "Configuration" page
+ * Show boss ailment threshold in Chill and Shock breakdown (Sirus, Shaper, Uber Atziri)
+ * Change jewel tooltips to now scroll horizontally across the screen when having many jewel sockets
+ * Update Pantheon mods to the changes from 3.11
+ * Update Cluster jewels to include new jewel socket enchantments
+ * Fix Orb of Storms to use a Hit Rate value instead of Cast Speed
+ * Fix Rage not working correctly in some cases
+ * Fix Wither not applying properly in many cases
+ * Fix Unnerve applying to DoT Spell skills
+ * Fix Unbound Ailments Support not working with new Ailments
+ * Fix parsing for mods that modified the duration of Aspect of the Cat/Avian
+ * Fix support for Bannerman and Revelry
+ * Fix Vaal Molten Shell more Armour Buff
+ * Fix Baranite Thaumaturge default skill by removing "attack" tag
+ * Fix Cluster nodes on the tree with broken tooltips
+ * Fix bug where Shock was applying twice on Minion skills
+ * Fix bug where skills that reserved Mana would benefit from negative Life/Mana Reservation
+ * Fix bug where removable crafts remained after editing an item
+ * Fix crash on deleting the number for default gem level/quality on the skills tab
+[1.4.170.2][2020/06/23]
+ * Add Baranite Sister Spectre
+ * Add 20 fuse cap to Explosive Arrow
+ * Fix Corpse Pact node attack speed cap
+ * Fix some Cluster jewel notables not appearing on the tree
+ * Fix unique staves using the Judgement Staff base
+[1.4.170.1][2020/06/22]
+ * Add all new gems from 3.11
+   * Full support:
+     * Earthshatter
+     * Arcanist Brand
+     * Penance Brand
+     * Wintertide Brand
+     * Fist of War Support
+     * Urgent Orders Support
+     * Swiftbrand Support
+   * Partial support:
+     * Ancestral Cry
+     * Generals Cry
+     * Intimidating Cry
+     * Seismic Cry
+ * Update gems with 3.11 changes
+ * Update uniques with 3.11 changes
+ * Add basic support for Warcry power
+ * Add large breakdown for character defences
+   * Shows detailed breakdowns for defences
+   * Includes effective hit points against hits and DoTs for each element
+   * And much more
+ * Add UI for annointing amulets
+ * Add dropdown to select dps field for sorting support gems
+ * Add prefix/suffix tag for crafting options
+ * Add support for Scorch, Brittle, and Sap
+ * Add parsing for Tailwind mod on Hunter influenced boots
+ * Add support for Supreme Ostentation Keystone
+ * Add support for Glancing Blows Keystone
+ * Add support for new Rage nodes and Chainbreaker's two regen related mods 
+ * Add support for "as though dealing more damage" for Shock, Chill, and Freeze
+ * Add support for Overshock and Voltaxic Rift max shock mod
+ * Add support for stance nodes on the tree
+ * Add support for two-handed Impale nodes on the tree
+ * Add support for Attack Critical Strike multiplier while Dual Wielding
+ * Add Mortal Conviction to Skin of the Lords
+ * Add 75% cap for buff expiration speed
+ * Add support for Daresso's Courage block mod
+ * Add support for Liege of the Primordial golem elemental immunity
+ * Add support for Arcane Blessing ailment immunity
+ * Add total for "reduced Extra Damage from Critical Strikes" on the calcs page
+ * Add support for cooldowns rounding to the nearest server tick
+ * Add hard caps to attack, cast, trap throwing and mine throwing speeds
+ * Add better support for Soul Tether unique belt
+ * Update Area of Effect calculations showing breakpoints for skills
+ * Clamp skill gem options to make comparing gems more consistent
+ * Fix incorrect enemy armour calculations
+ * Fix importing bug with 2-line implicit Cluster jewels
+ * Fix crash related to Cluster jewel Keystones on the calcs page
+ * Fix bug where the node power calculator would sometimes break when using Impale
+ * Fix Consecrated Path not applying more damage to close targets
+ * Fix Herald dependent mods applying while unbuffed
+ * Fix parsing for bleed infliction/immunity mods
+ * Fix several typos on uniques
+ * Fix Talisman tier parsing
+ * Fix Hybrid flasks not counting as Life/Mana flasks
+ * Fix for Berserk quality attack damage not applying properly
+ * Fix for Dying Sun not changing "increased" to "reduced" properly
+ * Fix faster bleeding mods not being displayed
+ * Fix 20 quality Awakened Generosity not increasing supported auras level
+ * Fix Snipe stages applying incorrectly to the Snipe skill
+ * Fix Stormbind damage per improvement
+ * Fix Elusive calculations not applying properly
+ * Fix node search not updating when switching Cluster jewels
+ * Fix tooltip for Feeding Frenzy
+ * Fix bug for brand nodes on the tree
+ * Fix support for corpse pact
+ * Fix poison node on the tree for spell skills applying to cold DoTs
+ * Fix parsing for the new Purposeful Harbinger mod
+ * Fix calculation of crab barriers
+ * Remove 20% more physical damage while dual wielding
+[1.4.169.3][2020/06/17]
+ * Add 3.11 passive skill tree
+ * Add support for Indigo oils
+ * Add support for reworded brand mods
+ * Add support for Overwhelm
 [1.4.169.2][2020/04/20]
  * Change the 'Damage Avoidance' subsection to be collapsed by default
  * Fix parsing on Assailum helmet

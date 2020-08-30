@@ -201,7 +201,7 @@ local ItemsTabClass = newClass("ItemsTab", "UndoHandler", "ControlHost", "Contro
 	-- Unique database
 	self.controls.uniqueDB = new("ItemDBControl", {"TOPLEFT",self.controls.itemList,"BOTTOMLEFT"}, 0, 76, 360, function(c) return m_min(244, self.maxY - select(2, c:GetPos())) end, self, main.uniqueDB[build.targetVersion], "UNIQUE")
 	self.controls.uniqueDB.y = function()
-		return self.controls.selectDBLabel:IsShown() and 98 or 76
+		return self.controls.selectDBLabel:IsShown() and 118 or 96
 	end
 	self.controls.uniqueDB.shown = function()
 		return not self.controls.selectDBLabel:IsShown() or self.controls.selectDB.selIndex == 1
@@ -210,7 +210,7 @@ local ItemsTabClass = newClass("ItemsTab", "UndoHandler", "ControlHost", "Contro
 	-- Rare template database
 	self.controls.rareDB = new("ItemDBControl", {"TOPLEFT",self.controls.itemList,"BOTTOMLEFT"}, 0, 76, 360, function(c) return m_min(260, self.maxY - select(2, c:GetPos())) end, self, main.rareDB[build.targetVersion], "RARE")
 	self.controls.rareDB.y = function()
-		return self.controls.selectDBLabel:IsShown() and 78 or 376
+		return self.controls.selectDBLabel:IsShown() and 78 or 396
 	end
 	self.controls.rareDB.shown = function()
 		return not self.controls.selectDBLabel:IsShown() or self.controls.selectDB.selIndex == 2
@@ -343,7 +343,7 @@ If there's 2 slots an item can go in, holding Shift will put it in the second.]]
 	end
 	
 	-- Section: Enchant / Anoint / Corrupt
-	self.controls.displayItemSectionEnchant = new("Control", {"TOPLEFT",self.controls.displayItemSectionSockets,"BOTTOMLEFT",true}, 0, 0, 0, function()
+	self.controls.displayItemSectionEnchant = new("Control", {"TOPLEFT",self.controls.displayItemSectionSockets,"BOTTOMLEFT"}, 0, 0, 0, function()
 		return (self.controls.displayItemEnchant:IsShown() or self.controls.displayItemEnchant2:IsShown() or self.controls.displayItemAnoint:IsShown() or self.controls.displayItemAnoint2:IsShown() or self.controls.displayItemCorrupt:IsShown() ) and 28 or 0
 	end)
 	self.controls.displayItemEnchant = new("ButtonControl", {"TOPLEFT",self.controls.displayItemSectionEnchant,"TOPLEFT"}, 0, 0, 160, 20, "Apply Enchantment...", function()
@@ -488,7 +488,7 @@ If there's 2 slots an item can go in, holding Shift will put it in the second.]]
 
 	-- Section: Affix Selection
 	self.controls.displayItemSectionAffix = new("Control", {"TOPLEFT",self.controls.displayItemSectionClusterJewel,"BOTTOMLEFT"}, 0, 0, 0, function()
-		if not self.displayItem.crafted then
+		if not self.displayItem or not self.displayItem.crafted then
 			return 0
 		end
 		local h = 6
@@ -540,6 +540,56 @@ If there's 2 slots an item can go in, holding Shift will put it in the second.]]
 					end
 					if mod.modTags and #mod.modTags > 0 then
 						tooltip:AddLine(16, "Tags: "..table.concat(mod.modTags, ', '))
+					end
+
+					local notableName = mod[1] and mod[1]:match("1 Added Passive Skill is (.*)")
+					local node = notableName and self.build.spec.tree.clusterNodeMap[notableName]
+					if node then
+						tooltip:AddSeparator(14)
+
+						-- Node name
+						self.socketViewer:AddNodeName(tooltip, node, self.build)
+
+						-- Node description
+						if node.sd[1] then
+							tooltip:AddLine(16, "")
+							for i, line in ipairs(node.sd) do
+								tooltip:AddLine(16, ((node.mods[i].extra or not node.mods[i].list) and colorCodes.UNSUPPORTED or colorCodes.MAGIC)..line)
+							end
+						end
+
+						-- Reminder text
+						if node.reminderText then
+							tooltip:AddSeparator(14)
+							for _, line in ipairs(node.reminderText) do
+								tooltip:AddLine(14, "^xA0A080"..line)
+							end
+						end
+
+						-- Comparison
+						tooltip:AddSeparator(14)
+						self:AppendAnointTooltip(tooltip, node, "Allocating")
+
+						-- Information of for this notable appears
+						local clusterInfo = self.build.data.clusterJewelInfoForNotable[notableName]
+						if clusterInfo then
+							tooltip:AddSeparator(14)
+							tooltip:AddLine(20, "^7"..notableName.." can appear on:")
+							local isFirstSize = true
+							for size, v in pairs(clusterInfo.size) do
+								tooltip:AddLine(18, colorCodes.MAGIC..size..":")
+								local sizeSkills = self.build.data.clusterJewels.jewels[size].skills
+								for i, type in ipairs(clusterInfo.jewelTypes) do
+									if sizeSkills[type] then
+										tooltip:AddLine(14, "^7    "..sizeSkills[type].name)
+									end
+								end
+								if not isFirstSize then
+									tooltip:AddLine(10, "")
+								end
+								isFirstSize = false
+							end
+						end
 					end
 				else
 					tooltip:AddLine(16, "^7"..#modList.." Tiers")
@@ -825,13 +875,15 @@ function ItemsTabClass:Draw(viewPort, inputEvents)
 	self.controls.scrollBarV.y = viewPort.y
 	do
 		local maxY = select(2, self.lastSlot:GetPos()) + 24
+		local maxX = self.anchorDisplayItem:GetPos() + 462
 		if self.displayItem then
 			local x, y = self.controls.displayItemTooltipAnchor:GetPos()
-			local ttW, ttH = self.displayItemTooltip:GetSize()
+			local ttW, ttH = self.displayItemTooltip:GetDynamicSize(viewPort)
 			maxY = m_max(maxY, y + ttH + 4)
+			maxX = m_max(maxX, x + ttW + 80)
 		end
 		local contentHeight = maxY - self.y
-		local contentWidth = self.anchorDisplayItem:GetPos() + 462 - self.x
+		local contentWidth = maxX - self.x
 		local v = contentHeight > viewPort.height
 		local h = contentWidth > viewPort.width - (v and 20 or 0)
 		if h then
@@ -1270,6 +1322,11 @@ function ItemsTabClass:CraftClusterJewel()
 	local item = self.displayItem
 	wipeTable(item.enchantModLines)
 	t_insert(item.enchantModLines, { line = "Adds "..(item.clusterJewelNodeCount or item.clusterJewel.maxNodes).." Passive Skills", crafted = true })
+	if item.clusterJewel.size == "Large" then
+		t_insert(item.enchantModLines, { line = "2 Added Passive Skills are Jewel Sockets", crafted = true })
+	elseif item.clusterJewel.size == "Medium" then
+		t_insert(item.enchantModLines, { line = "1 Added Passive Skill is a Jewel Socket", crafted = true })
+	end
 	local skill = item.clusterJewel.skills[item.clusterJewelSkill]
 	t_insert(item.enchantModLines, { line = table.concat(skill.enchant, "\n"), crafted = true })
 	item:BuildAndParseRaw()
@@ -1798,15 +1855,19 @@ end
 ---Appends tooltip information for anointing a new passive tree node onto the currently editing amulet
 ---@param tooltip table @The tooltip to append into
 ---@param node table @The passive tree node that will be anointed, or nil to remove the current anoint.
-function ItemsTabClass:AppendAnointTooltip(tooltip, node)
+function ItemsTabClass:AppendAnointTooltip(tooltip, node, actionText)
 	if not self.displayItem then
 		return
+	end
+
+	if not actionText then
+		actionText = "Anointing"
 	end
 
 	local header
 	if node then
 		if self.build.spec.allocNodes[node.id] then
-			tooltip:AddLine(14, "^7Anointing "..node.dn.." changes nothing because this node is already allocated on the tree.")
+			tooltip:AddLine(14, "^7"..actionText.." "..node.dn.." changes nothing because this node is already allocated on the tree.")
 			return
 		end
 
@@ -1814,22 +1875,22 @@ function ItemsTabClass:AppendAnointTooltip(tooltip, node)
 		if curAnoints and #curAnoints > 0 then
 			for _, curAnoint in ipairs(curAnoints) do
 				if curAnoint == node.dn then
-					tooltip:AddLine(14, "^7Anointing "..node.dn.." changes nothing because this node is already anointed.")
+					tooltip:AddLine(14, "^7"..actionText.." "..node.dn.." changes nothing because this node is already anointed.")
 					return
 				end
 			end
 		end
 
-		header = "^7Anointing "..node.dn.." will give you: "
+		header = "^7"..actionText.." "..node.dn.." will give you: "
 	else
-		header = "^7Anointing nothing will give you: "
+		header = "^7"..actionText.." nothing will give you: "
 	end
 	local calcFunc = self.build.calcsTab:GetMiscCalculator()
 	local outputBase = calcFunc({ repSlotName = "Amulet", repItem = self.displayItem })
 	local outputNew = calcFunc({ repSlotName = "Amulet", repItem = self:anointItem(node) })
 	local numChanges = self.build:AddStatComparesToTooltip(tooltip, outputBase, outputNew, header)
 	if node and numChanges == 0 then
-		tooltip:AddLine(14, "^7Anointing "..node.dn.." changes nothing.")
+		tooltip:AddLine(14, "^7"..actionText.." "..node.dn.." changes nothing.")
 	end
 end
 
@@ -1954,30 +2015,35 @@ function ItemsTabClass:AddCustomModifierToDisplayItem()
 	local controls = { }
 	local sourceList = { }
 	local modList = { }
+	---Mutates modList to contain mods from the specified source
+	---@param sourceId string @The crafting source id to build the list of mods for
 	local function buildMods(sourceId)
 		wipeTable(modList)
 		if sourceId == "MASTER" then
-			for _, craft in ipairs(self.build.data.masterMods) do
+			for i, craft in ipairs(self.build.data.masterMods) do
 				if craft.types[self.displayItem.type] then
-					local label
-					if craft.master then
-						label = craft.master .. " " .. craft.masterLevel .. "   "..craft.type:sub(1,3).."^8[" .. table.concat(craft, "/") .. "]"
-					else
-						label = table.concat(craft, "/")
-					end
 					t_insert(modList, {
-						label = label,
+						label = table.concat(craft, "/") .. " ^8(" .. craft.type .. ")",
 						mod = craft,
 						type = "crafted",
+						affixType = craft.type,
+						defaultOrder = i,
 					})
 				end
 			end
+			table.sort(modList, function(a, b)
+				if a.affixType ~= b.affixType then
+					return a.affixType == "Prefix" and b.affixType == "Suffix"
+				else
+					return a.defaultOrder < b.defaultOrder
+				end
+			end)
 		elseif sourceId == "ESSENCE" then
 			for _, essence in pairs(self.build.data.essences) do
 				local modId = essence.mods[self.displayItem.type]
 				local mod = self.displayItem.affixes[modId]
 				t_insert(modList, {
-					label = essence.name .. "   "..mod.type:sub(1,3).."^8[" .. table.concat(mod, "/") .. "]",
+					label = essence.name .. "   " .. "^8[" .. table.concat(mod, "/") .. "]" .. " (" .. mod.type .. ")",
 					mod = mod,
 					type = "custom",
 					essence = essence,
@@ -2369,7 +2435,7 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode)
 			if item.base.flask.life then
 				local lifeInc = modDB:Sum("INC", nil, "FlaskLifeRecovery")
 				local lifeRateInc = modDB:Sum("INC", nil, "FlaskLifeRecoveryRate")
-				local inst = flaskData.lifeBase * instantPerc / 100 * (1 + lifeInc / 100) * (1 + effectInc / 100) * output.LifeRecoveryMod
+				local inst = flaskData.lifeBase * instantPerc / 100 * (1 + lifeInc / 100) * (1 + effectInc / 100)
 				local grad = flaskData.lifeBase * (1 - instantPerc / 100) * (1 + lifeInc / 100) * (1 + effectInc / 100) * (1 + durInc / 100) * output.LifeRecoveryRateMod
 				local lifeDur = flaskData.duration * (1 + durInc / 100) / (1 + rateInc / 100) / (1 + lifeRateInc / 100)
 				if inst > 0 and grad > 0 then
@@ -2385,7 +2451,7 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode)
 			if item.base.flask.mana then
 				local manaInc = modDB:Sum("INC", nil, "FlaskManaRecovery")
 				local manaRateInc = modDB:Sum("INC", nil, "FlaskManaRecoveryRate")
-				local inst = flaskData.manaBase * instantPerc / 100 * (1 + manaInc / 100) * (1 + effectInc / 100) * output.ManaRecoveryMod
+				local inst = flaskData.manaBase * instantPerc / 100 * (1 + manaInc / 100) * (1 + effectInc / 100)
 				local grad = flaskData.manaBase * (1 - instantPerc / 100) * (1 + manaInc / 100) * (1 + effectInc / 100) * (1 + durInc / 100) * output.ManaRecoveryRateMod
 				local manaDur = flaskData.duration * (1 + durInc / 100) / (1 + rateInc / 100) / (1 + manaRateInc / 100)
 				if inst > 0 and grad > 0 then

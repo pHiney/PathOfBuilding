@@ -341,12 +341,12 @@ return {
 ["base_cooldown_speed_+%"] = {
 	mod("CooldownRecovery", "INC", nil),
 },
-["support_added_cooldown_count_if_not_instant"] = {
-	mod("CooldownRecovery", "INC", nil),
-},
 ["additional_weapon_base_attack_time_ms"] = {
 	mod("Speed", "BASE", nil, ModFlag.Attack),
 	div = 1000,
+},
+["warcry_speed_+%"] = {
+	mod("WarcrySpeed", "INC", nil, 0, KeywordFlag.Warcry),
 },
 -- AoE
 ["base_skill_area_of_effect_+%"] = {
@@ -625,6 +625,9 @@ return {
 	mod("EnemyChillEffect", "INC", nil),
 	mod("EnemyShockEffect", "INC", nil),
 	mod("EnemyFreezeEffect", "INC", nil),
+	mod("EnemyScorchEffect", "INC", nil),
+	mod("EnemyBrittleEffect", "INC", nil),
+	mod("EnemySapEffect", "INC", nil),
 },
 ["base_poison_duration_+%"] = {
 	mod("EnemyPoisonDuration", "INC", nil),
@@ -649,6 +652,9 @@ return {
 	mod("EnemyShockDuration", "INC", nil), 
 	mod("EnemyChillDuration", "INC", nil), 
 	mod("EnemyFreezeDuration", "INC", nil),
+	mod("EnemyScorchDuration", "INC", nil),
+	mod("EnemyBrittleDuration", "INC", nil),
+	mod("EnemySapDuration", "INC", nil),
 },
 ["base_all_ailment_duration_+%"] = {
 	mod("EnemyBleedDuration", "INC", nil), 
@@ -657,6 +663,9 @@ return {
 	mod("EnemyShockDuration", "INC", nil), 
 	mod("EnemyChillDuration", "INC", nil), 
 	mod("EnemyFreezeDuration", "INC", nil),
+	mod("EnemyScorchDuration", "INC", nil),
+	mod("EnemyBrittleDuration", "INC", nil),
+	mod("EnemySapDuration", "INC", nil),
 },
 ["bleeding_damage_+%"] = {
 	mod("Damage", "INC", nil, 0, KeywordFlag.Bleed),
@@ -676,6 +685,9 @@ return {
 ["fire_dot_multiplier_+"] = {
 	mod("FireDotMultiplier", "BASE", nil),
 },
+["cold_dot_multiplier_+"] = {
+	mod("ColdDotMultiplier", "BASE", nil),
+},
 ["active_skill_ignite_damage_+%_final"] = {
 	mod("Damage", "MORE", nil, 0, KeywordFlag.Ignite),
 },
@@ -683,6 +695,12 @@ return {
 	mod("BleedFaster", "INC", nil),
 	mod("PoisonFaster", "INC", nil),
 	mod("IgniteBurnFaster", "INC", nil),
+},
+["active_skill_shock_as_though_damage_+%_final"] = {
+	mod("ShockAsThoughDealing", "MORE", nil),
+},
+["active_skill_chill_as_though_damage_+%_final"] = {
+	mod("ChillAsThoughDealing", "MORE", nil),
 },
 -- Global flags
 ["never_ignite"] = {
@@ -1075,6 +1093,9 @@ return {
 ["mine_laying_speed_+%"] = {
 	mod("MineLayingSpeed", "INC", nil),
 },
+["mine_damage_+%"] = {
+	mod("Damage", "INC", nil, 0, KeywordFlag.Mine),
+},
 ["mine_detonation_radius_+%"] = {
 	mod("MineDetonationAreaOfEffect", "INC", nil),
 },
@@ -1192,6 +1213,16 @@ return {
 ["sigil_attached_target_damage_+%_final"] = {
 	mod("Damage", "MORE", nil, 0, 0, { type = "MultiplierThreshold", var = "BrandsAttachedToEnemy", threshold = 1 }),
 },
+["base_number_of_sigils_allowed_per_target"] = {
+	mod("BrandsAttachedLimit", "BASE", nil)
+},
+["base_sigil_repeat_frequency_ms"] = {
+	skill("repeatFrequency", nil),
+	div = 1000,
+},
+["sigil_repeat_frequency_+%"] = {
+	mod("BrandActivationFrequency", "INC", nil)
+},
 -- Banner
 ["banner_buff_effect_+%_per_stage"] = {
 	mod("AuraEffect", "INC", nil, 0, 0, { type = "Multiplier", var = "BannerStage" }, { type = "Condition", var = "BannerPlanted" }),
@@ -1201,7 +1232,7 @@ return {
 },
 -- Other
 ["triggered_skill_damage_+%"] = {
-	mod("Damage", "INC", nil, 0, 0, { type = "SkillType", skillType = SkillType.Triggered }),
+	mod("TriggeredDamage", "INC", nil, 0, 0, { type = "SkillType", skillType = SkillType.Triggered }),
 },
 ["channelled_skill_damage_+%"] = {
 	mod("Damage", "INC", nil, 0, 0, { type = "SkillType", skillType = SkillType.Channelled }),

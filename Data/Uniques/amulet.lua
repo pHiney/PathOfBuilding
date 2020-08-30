@@ -377,6 +377,19 @@ Implicits: 32
 {variant:32}Projectiles Pierce (4-6) additional Targets
 Implicit Modifier magnitudes are doubled
 ]],[[
+The Felbog Fang
+Citrine Amulet
+League: Harvest
+Requires Level 61
+Implicits: 1
+{tags:jewellery_attribute}+(16-24) to Strength and Dexterity
+{tags:jewellery_attribute}+(30-50) to Intelligence
+{tags:caster,speed}(10-15)% increased Cast Speed
+(10-15)% increased Area of Effect
+Enemies Cursed by you are Hindered with 25% reduced Movement Speed if 25% of Curse Duration expired
+Your Curses have 25% increased Effect if 50% of Curse Duration expired
+Enemies Cursed by you take 25% increased Damage if 75% of Curse Duration expired
+]],[[
 Fury Valve
 Turquoise Amulet
 League: Metamorph
@@ -392,6 +405,8 @@ Modifiers to number of Projectiles instead apply to the number of targets Projec
 Gloomfang
 Blue Pearl Amulet
 Source: Drops from unique{The Purifier}
+Variant: Pre 3.11.0
+Variant: Current
 Requires Level 77
 Implicits: 1
 {tags:mana}(48-56)% increased Mana Regeneration Rate
@@ -399,7 +414,9 @@ Implicits: 1
 {tags:caster,life}Lose (10-15) Life for each Enemy hit by your Spells
 {tags:attack,life}Lose (20-25) Life for each Enemy hit by your Attacks
 Skills Chain +1 times
-Projectiles gain (15-20)% of Non-Chaos Damage as extra Chaos Damage per Chain
+{variant:2}(30-40)% increased Projectile Speed
+{variant:1}Projectiles gain (15-20)% of Non-Chaos Damage as extra Chaos Damage per Chain
+{variant:2}Projectiles that have Chained gain (20-35)% of Non-Chaos Damage as extra Chaos Damage
 ]],[[
 The Halcyon
 Jade Amulet
@@ -451,6 +468,7 @@ Grants Level 22 Precision Skill
 {tags:jewellery_elemental,attack}Adds (11-15) to (23-28) Cold Damage to Attacks
 +(23-28)% to Global Critical Strike Multiplier
 {tags:attack,life}(0.8-1)% of Physical Attack Damage Leeched as Life
+Precision has 50% less Mana Reservation
 ]],[[
 The Ignomon
 Gold Amulet
@@ -494,22 +512,22 @@ Implicits: 1
 {variant:3}{tags:jewellery_elemental}Adds (20-24) to (33-36) Cold Damage
 {variant:4}{tags:jewellery_elemental}Adds (10-13) to (43-47) Lightning Damage
 {variant:5}Adds (17-19) to (23-29) Chaos Damage
-{variant:1}{tags:jewellery_defense}+(400-500) to Armour
-{variant:2}{tags:life}1% of Life Regenerated per second
-{variant:3}{tags:mana}(45-50)% increased Mana Regeneration Rate
-{variant:4}{tags:jewellery_defense}1% of Energy Shield Regenerated per second
-{variant:5}(30-40)% increased Damage over Time
 {tags:life}+(50-70) to maximum Life
+{variant:1}{tags:jewellery_defense}+(400-500) to Armour
+{variant:2}{tags:life}Regenerate 1% of Life per second
+{variant:3}{tags:mana}(45-50)% increased Mana Regeneration Rate
+{variant:4}{tags:jewellery_defense}Regenerate 1% of Energy Shield per second
+{variant:5}(30-40)% increased Damage over Time
 {variant:1}(30-40)% increased Stun and Block Recovery
 {variant:2}{tags:jewellery_resistance}+(20-25)% to Fire Resistance
 {variant:3}{tags:jewellery_resistance}+(20-25)% to Cold Resistance
 {variant:4}{tags:jewellery_resistance}+(20-25)% to Lightning Resistance
 {variant:5}{tags:jewellery_resistance}+(17-23)% to Chaos Resistance
-{variant:1}100% reduced Vulnerability Mana Reservation
-{variant:2}100% reduced Flammability Mana Reservation
-{variant:3}100% reduced Frostbite Mana Reservation
-{variant:4}100% reduced Conductivity Mana Reservation
-{variant:5}100% reduced Despair Mana Reservation
+{variant:1}Vulnerability has 100% reduced Mana Reservation if Cast as an Aura
+{variant:2}Flammability has 100% reduced Mana Reservation if Cast as an Aura
+{variant:3}Frostbite has 100% reduced Mana Reservation if Cast as an Aura
+{variant:4}Conductivity has 100% reduced Mana Reservation if Cast as an Aura
+{variant:5}Despair has 100% reduced Mana Reservation if Cast as an Aura
 Gain Maddening Presence for 10 seconds when you Kill a Rare or Unique Enemy
 Elder Item
 ]],[[
@@ -606,13 +624,13 @@ Night's Hold
 Black Maw Talisman
 League: Talisman Standard, Talisman Hardcore
 Talisman Tier: 1
-Requires Level 25
+Requires Level 12
 Implicits: 1
 Has 1 Socket
 +2 to Level of Socketed Gems
-Socketed Gems are Supported by level 10 Added Chaos Damage
-Socketed Gems are Supported by level 10 Blind
-Socketed Gems are Supported by level 10 Cast When Stunned
+Socketed Gems are Supported by Level 10 Added Chaos Damage
+Socketed Gems are Supported by Level 10 Blind
+Socketed Gems are Supported by Level 10 Cast when Stunned
 Corrupted
 ]],[[
 Perquil's Toe
@@ -653,6 +671,17 @@ Implicits: 1
 {tags:jewellery_attribute}Items and Gems have 10% reduced Attribute Requirements
 {tags:jewellery_elemental}5% chance to Freeze, Shock and Ignite
 Cannot gain Power Charges
+]],[[
+Retaliation Charm
+Citrine Amulet
+Requires Level 30
+Implicits: 1
+{tags:jewellery_attribute}+(16-24) to Strength and Dexterity
+(25-40)% increased Damage with Hits and Ailments against Blinded Enemies
+(30-50)% increased Critical Strike Chance against Blinded Enemies
+(40-50)% chance to Blind Enemies on Critical Strike
+Blind does not affect your Light Radius
+Blind you inflict is Reflected to you
 ]],[[
 Rigwald's Curse
 Wereclaw Talisman
@@ -756,7 +785,7 @@ Implicits: 1
 (30-50)% increased Cold Damage
 {tags:jewellery_resistance}+(10-15)% to all Elemental Resistances
 {variant:1}30% increased Radius of Curse Skills
-{variant:2}60% increased Area of Effect of Curse Skills
+{variant:2,3}60% increased Area of Effect of Curse Skills
 You cannot be Cursed with Silence
 {variant:1,2}Grants level 20 Illusory Warp Skill
 Corrupted
@@ -801,19 +830,17 @@ Grants level 10 Purity of Elements Skill
 ]],[[
 Ungil's Harmony
 Turquoise Amulet
-Variant: Pre 2.2.0
-Variant: Pre 2.6.0
+Variant: Pre 3.11.0
 Variant: Current
 Requires Level 23
 Implicits: 1
 {tags:jewellery_attribute}+(16-24) to Dexterity and Intelligence
-100% increased Global Critical Strike Chance
-{variant:1}−50% to Global Critical Strike Multiplier
-{variant:2}−75% to Global Critical Strike Multiplier
-{variant:3}−25% to Global Critical Strike Multiplier
+{variant:1}100% increased Global Critical Strike Chance
+{variant:2}(250-350)% increased Global Critical Strike Chance
 {tags:life}+(30-50) to maximum Life
 {tags:mana}+(30-50) to maximum Mana
 40% increased Stun and Block Recovery
+Your Critical Strikes do not deal extra Damage
 ]],[[
 Victario's Acuity
 Turquoise Amulet
@@ -871,15 +898,19 @@ Gain an Endurance Charge when a Power Charge expires or is consumed
 ]],[[
 Warped Timepiece
 Turquoise Amulet
+Variant: Pre 3.11.0
+Variant: Current
 Requires Level 50
 Implicits: 1
 {tags:jewellery_attribute}+(16-24) to Dexterity and Intelligence
-{tags:attack}(8-12)% increased Attack Speed
-{tags:caster}(8-12)% increased Cast Speed
+{variant:1}{tags:attack}(8-12)% increased Attack Speed
+{variant:2}{tags:attack}(10-15)% increased Attack Speed
+{variant:1}{tags:caster}(8-12)% increased Cast Speed
+{variant:2}{tags:caster}(10-15)% increased Cast Speed
 12% increased Movement Speed
-(8-12)% reduced Skill Effect Duration
-{tags:life}30% increased Life Leeched per second
-{tags:mana}30% increased Mana Leeched per second
+{variant:1}(8-12)% reduced Skill Effect Duration
+{variant:2}(10-15)% reduced Skill Effect Duration
+30% increased total Recovery per second from Life, Mana, or Energy Shield Leech
 ]],[[
 Willowgift
 Jade Amulet
@@ -891,7 +922,7 @@ Implicits: 1
 {tags:jewellery_resistance}-(30-20)% to Fire Resistance
 {tags:jewellery_resistance}+(30-40)% to Cold Resistance
 Fortify Buffs you create instead grant 30% more Evasion Rating
-{tags:caster,attack}15-25)% increased Attack and Cast Speed while you have Fortify
+{tags:caster,attack}(15-25)% increased Attack and Cast Speed while you have Fortify
 ]],[[
 Winterheart
 Gold Amulet

@@ -223,14 +223,20 @@ function CalcsTabClass:Draw(viewPort, inputEvents)
 		if section.enabled then
 			local col
 			if section.group == 1 then
-				-- Group 1: Offense 
+				-- Group 1: Offense or 3 wide sections
 				-- This group is put into the first 3 columns, with each section placed into the highest available location
 				col = 1
-				local minY = colY[col] or baseY
-				for c = 2, 3 do
-					if (colY[c] or baseY) < minY then
-						col = c
-						minY = colY[c] or baseY
+				if section.width == self.colWidth then -- if 1 col wide
+					local minY = colY[col] or baseY
+					for c = 2, 3 do
+						if (colY[c] or baseY) < minY then
+							col = c
+							minY = colY[c] or baseY
+						end
+					end
+				else
+					for c = 2, 3 do
+						colY[col] = m_max(colY[col] or baseY, colY[c] or baseY)
 					end
 				end
 			elseif section.group == 2 then
@@ -447,8 +453,11 @@ function CalcsTabClass:PowerBuilder()
 	local cache = { }
 	local newPowerMax = {
 		singleStat = 0,
+		singleStatPerPoint = 0,
 		offence = 0,
-		defence = 0
+		offencePerPoint = 0,
+		defence = 0,
+		defencePerPoint = 0
 	}
 	if not self.powerMax then
 		self.powerMax = newPowerMax
@@ -466,8 +475,9 @@ function CalcsTabClass:PowerBuilder()
 			local output = cache[node.modKey]
 			if self.powerStat and self.powerStat.stat and not self.powerStat.ignoreForNodes then
 				node.power.singleStat = self:CalculatePowerStat(self.powerStat, output, calcBase)
-				if node.path then
+				if node.path and not node.ascendancyName then
 					newPowerMax.singleStat = m_max(newPowerMax.singleStat, node.power.singleStat)
+					newPowerMax.singleStatPerPoint = m_max(node.power.singleStat / node.pathDist, newPowerMax.singleStatPerPoint)
 				end
 			else
 				if calcBase.Minion then
@@ -481,9 +491,12 @@ function CalcsTabClass:PowerBuilder()
 								(output.Evasion - calcBase.Evasion) / m_max(10000, calcBase.Evasion) +
 								(output.LifeRegen - calcBase.LifeRegen) / 500 +
 								(output.EnergyShieldRegen - calcBase.EnergyShieldRegen) / 1000
-				if node.path then
+				if node.path and not node.ascendancyName then
 					newPowerMax.offence = m_max(newPowerMax.offence, node.power.offence)
 					newPowerMax.defence = m_max(newPowerMax.defence, node.power.defence)
+					newPowerMax.offencePerPoint = m_max(newPowerMax.offencePerPoint, node.power.offence / node.pathDist)
+					newPowerMax.defencePerPoint = m_max(newPowerMax.defencePerPoint, node.power.defence / node.pathDist)
+
 				end
 			end
 		end

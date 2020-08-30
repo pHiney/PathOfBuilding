@@ -59,6 +59,18 @@ Implicits: 1
 {variant:2}{tags:jewellery_defense}20% increased maximum Energy Shield
 {tags:jewellery_defense}50% increased Energy Shield Recharge Rate
 ]],[[
+Bear's Girdle
+Leather Belt
+League: Harvest
+Requires Level 68
+Implicits: 1
+{tags:life}+(25-40) to maximum Life
+{tags:attack}Adds (5-7) to (11-12) Physical Damage to Attacks
+(20-30)% increased Stun Duration on Enemies
+Nearby Enemies are Crushed while you have least 25 Rage
+(4-6)% increased Physical Damage per 10 Rage
++20 to Maximum Rage
+]],[[
 Belt of the Deceiver
 Heavy Belt
 Variant: Pre 2.6.0
@@ -128,37 +140,51 @@ Darkness Enthroned
 Stygian Vise
 League: Abyss
 Source: Drops from Abyssal Liches
+Variant: Pre 3.11.0
+Variant: Current
 Implicits: 1
 Has 1 Abyssal Socket
 Has 1 Abyssal Socket
-50% increased Effect of Socketed Jewels
+{variant:1}50% increased Effect of Socketed Jewels
+{variant:2}75% increased Effect of Socketed Jewels
 ]],[[
 Doryani's Invitation
 Heavy Belt
 Source: Drops from unique{Atziri, Queen of the Vaal} in normal{The Apex of Sacrifice}
-Variant: Physical
-Variant: Fire
-Variant: Cold
-Variant: Lightning
+Variant: Pre 3.11.0 (Physical)
+Variant: Pre 3.11.0 (Fire)
+Variant: Pre 3.11.0 (Cold)
+Variant: Pre 3.11.0 (Lightning)
+Variant: Current (Physical)
+Variant: Current (Fire)
+Variant: Current (Cold)
+Variant: Current (Lightning)
 Requires Level 68
 Implicits: 1
 {tags:jewellery_attribute}+(25-35) to Strength
-{variant:1}(20-30)% increased Physical Damage
-{variant:2}{tags:jewellery_elemental}(20-30)% increased Fire Damage
-{variant:3}{tags:jewellery_elemental}(20-30)% increased Cold Damage
-{variant:4}{tags:jewellery_elemental}(20-30)% increased Lightning Damage
-{variant:2,3,4}{tags:jewellery_defense}+(300-350) to Armour
-{variant:1,3,4}{tags:jewellery_resistance}+(30-35)% to Fire Resistance
-{variant:1,2,4}{tags:jewellery_resistance}+(30-35)% to Cold Resistance
-{variant:1,2,3}{tags:jewellery_resistance}+(30-35)% to Lightning Resistance
+{variant:1,5}(20-30)% increased Physical Damage
+{variant:2,6}{tags:jewellery_elemental}(20-30)% increased Fire Damage
+{variant:3,7}{tags:jewellery_elemental}(20-30)% increased Cold Damage
+{variant:4,8}{tags:jewellery_elemental}(20-30)% increased Lightning Damage
+{variant:2,3,4,6,7,8}{tags:jewellery_defense}+(300-350) to Armour
+{variant:1,3,4,5,7,8}{tags:jewellery_resistance}+(30-35)% to Fire Resistance
+{variant:1,2,4,5,6,8}{tags:jewellery_resistance}+(30-35)% to Cold Resistance
+{variant:1,2,3,5,6,7}{tags:jewellery_resistance}+(30-35)% to Lightning Resistance
 {variant:1}{tags:life}0.2% of Physical Damage Leeched as Life
-{variant:2}{tags:lifejewellery_elemental}0.2% of Fire Damage Leeched as Life
-{variant:3}{tags:lifejewellery_elemental}0.2% of Cold Damage Leeched as Life
-{variant:4}{tags:lifejewellery_elemental}0.2% of Lightning Damage Leeched as Life
-{variant:1}Your Flasks grant 25% reduced Enemy Stun Threshold during flask effect
-{variant:2}Your Flasks grant 10% chance to Ignite during flask effect
-{variant:3}Your Flasks grant 10% chance to Freeze during flask effect
-{variant:4}Your Flasks grant 10% chance to Shock during flask effect
+{variant:5}{tags:life}0.6% of Physical Damage Leeched as Life
+{variant:2}{tags:life,jewellery_elemental}0.2% of Fire Damage Leeched as Life
+{variant:6}{tags:life,jewellery_elemental}0.6% of Fire Damage Leeched as Life
+{variant:3}{tags:life,jewellery_elemental}0.2% of Cold Damage Leeched as Life
+{variant:7}{tags:life,jewellery_elemental}0.6% of Cold Damage Leeched as Life
+{variant:4}{tags:life,jewellery_elemental}0.2% of Lightning Damage Leeched as Life
+{variant:8}{tags:life,jewellery_elemental}0.6% of Lightning Damage Leeched as Life
+{variant:1,5}Your Flasks grant 25% reduced Enemy Stun Threshold during any Flask Effect
+{variant:2}Your Flasks grant 10% chance to Ignite during any Flask Effect
+{variant:6}Your Flasks grant (20-30)% chance to Ignite during any Flask Effect
+{variant:3}Your Flasks grant 10% chance to Freeze during any Flask Effect
+{variant:7}Your Flasks grant (20-30)% chance to Freeze during any Flask Effect
+{variant:4}Your Flasks grant 10% chance to Shock during any Flask Effect
+{variant:8}Your Flasks grant (20-30)% chance to Shock during any Flask Effect
 ]],[[
 Dyadian Dawn
 Heavy Belt
@@ -203,10 +229,25 @@ Implicits: 1
 The Flow Untethered
 Cloth Belt
 League: Harbinger
+Upgrade: Upgrades to unique{The Torrent's Reclamation} via currency{Time-light Scroll}
 Requires Level 60
 Implicits: 1
 (15-25)% increased Stun and Block Recovery
 Grants Summon Harbinger of Time Skill
+{tags:caster,attack}(10-15)% increased Attack and Cast Speed
+{tags:life}(15-20)% increased Life Recovery rate
+{tags:jewellery_defense}(15-20)% increased Energy Shield Recovery rate
+(15-20)% increased Cooldown Recovery Speed
+Debuffs on you expire (15-20)% faster
+]],[[
+The Torrent's Reclamation
+Cloth Belt
+League: Harvest
+Source: Upgraded from unique{The Flow Untethered} via currency{Time-light Scroll}
+Requires Level 60
+Implicits: 1
+(15-25)% increased Stun and Block Recovery
+Grants Summon Greater Harbinger of Time Skill
 {tags:caster,attack}(10-15)% increased Attack and Cast Speed
 {tags:life}(15-20)% increased Life Recovery rate
 {tags:jewellery_defense}(15-20)% increased Energy Shield Recovery rate
@@ -242,33 +283,44 @@ When you Kill a Rare monster, you gain its mods for 20 seconds
 Hyperboreus
 Leather Belt
 League: Betrayal
-Variant: Life Regen
-Variant: Fire and Chaos Resistances
-Variant: Cold and Chaos Resistances
-Variant: Light and Chaos Resistances
-Variant: Strength and Dexterity
-Variant: Dexterity and Intelligence
-Variant: Strength and Intelligence
-Variant: Trap Throwing Speed
-Variant: Energy Shield Regen
-Variant: Lucky Crit Chance while Focussed
+Variant: Pre 3.11.0 (Life Regen)
+Variant: Pre 3.11.0 (Fire and Chaos Resistances)
+Variant: Pre 3.11.0 (Cold and Chaos Resistances)
+Variant: Pre 3.11.0 (Light and Chaos Resistances)
+Variant: Pre 3.11.0 (Strength and Dexterity)
+Variant: Pre 3.11.0 (Dexterity and Intelligence)
+Variant: Pre 3.11.0 (Strength and Intelligence)
+Variant: Pre 3.11.0 (Trap Throwing Speed)
+Variant: Pre 3.11.0 (Energy Shield Regen)
+Variant: Pre 3.11.0 (Lucky Crit Chance while Focussed)
+Variant: Current (Life Regen)
+Variant: Current (Fire and Chaos Resistances)
+Variant: Current (Cold and Chaos Resistances)
+Variant: Current (Light and Chaos Resistances)
+Variant: Current (Strength and Dexterity)
+Variant: Current (Dexterity and Intelligence)
+Variant: Current (Strength and Intelligence)
+Variant: Current (Trap Throwing Speed)
+Variant: Current (Energy Shield Regen)
+Variant: Current (Lucky Crit Chance while Focussed)
 Requires Level 60
 Implicits: 1
 {tags:life}+(25-40) to maximum Life
 {tags:jewellery_resistance}+(30-40)% to Cold Resistance
 Chill nearby Enemies when you Focus, causing 30% reduced Action Speed
-Focus has (15-25)% increased Cooldown Recovery Speed
+{variant:1,2,3,4,5,6,7,8,9,10}Focus has (15-25)% increased Cooldown Recovery Speed
+{variant:11,12,13,14,15,16,17,18,19,20}Focus has (30-50)% increased Cooldown Recovery Speed
 (50-70)% increased Damage with Hits and Ailments against Chilled Enemies
-{variant:1}{crafted}{tags:life}(1.0-2.0)% of Life Regenerated per second during any Flask Effect
-{variant:2}{crafted}{tags:jewellery_resistance}+(8-15)% to Fire and Chaos Resistances
-{variant:3}{crafted}{tags:jewellery_resistance}+(8-15)% to Cold and Chaos Resistances
-{variant:4}{crafted}{tags:jewellery_resistance}+(8-15)% to Lightning and Chaos Resistances
-{variant:5}{crafted}{tags:jewellery_attribute}+(6-17) to Strength and Dexterity
-{variant:6}{crafted}{tags:jewellery_attribute}+(6-17) to Dexterity and Intelligence
-{variant:7}{crafted}{tags:jewellery_attribute}+(6-17) to Strength and Intelligence
-{variant:8}{crafted}(7-12)% increased Trap Throwing Speed
-{variant:9}{crafted}{tags:jewellery_defense}(15-120) Energy Shield Regenerated per second while a Rare or Unique Enemy is Nearby
-{variant:10}{crafted}Your Critical Strike Chance is Lucky while Focussed
+{variant:1,11}{crafted}{tags:life}(1.0-2.0)% of Life Regenerated per second during any Flask Effect
+{variant:2,12}{crafted}{tags:jewellery_resistance}+(8-15)% to Fire and Chaos Resistances
+{variant:3,13}{crafted}{tags:jewellery_resistance}+(8-15)% to Cold and Chaos Resistances
+{variant:4,14}{crafted}{tags:jewellery_resistance}+(8-15)% to Lightning and Chaos Resistances
+{variant:5,15}{crafted}{tags:jewellery_attribute}+(6-17) to Strength and Dexterity
+{variant:6,16}{crafted}{tags:jewellery_attribute}+(6-17) to Dexterity and Intelligence
+{variant:7,17}{crafted}{tags:jewellery_attribute}+(6-17) to Strength and Intelligence
+{variant:8,18}{crafted}(7-12)% increased Trap Throwing Speed
+{variant:9,19}{crafted}{tags:jewellery_defense}(15-120) Energy Shield Regenerated per second while a Rare or Unique Enemy is Nearby
+{variant:10,20}{crafted}Your Critical Strike Chance is Lucky while Focussed
 ]],[[
 Immortal Flesh
 Leather Belt
@@ -324,7 +376,7 @@ Implicits: 1
 {tags:jewellery_attribute}+(40-50) to Dexterity
 50% increased Flask Charges gained
 {tags:jewellery_resistance}+(20-25)% to all Elemental Resistances while you have at least 200 Strength
-(40-50)% increased Projectile Attack Damage while you have at least 200 Dexterity
+{tags:attack}(40-50)% increased Projectile Attack Damage while you have at least 200 Dexterity
 ]],[[
 The Tactician
 Studded Belt
@@ -397,8 +449,8 @@ Implicits: 1
 {tags:jewellery_defense}+(260-320) to Armour and Evasion Rating
 {tags:life}(4-8)% increased maximum Life
 {tags:jewellery_resistance}+(20-40)% to Cold Resistance
-{tags:attack}1% increased Attack Damage per 300 of the lowest of Armour and Evasion Rating
-{tags:attack}(14-20)% chance to gain Fortify on Melee Stun
+{tags:attack}1% increased Attack Damage per 200 of the lowest of Armour and Evasion Rating
+{tags:attack}(14-20)% chance to gain Fortify when you Stun an Enemy with Melee Damage
 You have Onslaught while you have Fortify
 ]],[[
 Prismweave
@@ -462,16 +514,20 @@ Your Minions spread Caustic Ground on Death, dealing 20% of their maximum Life a
 ]],[[
 Soul Tether
 Cloth Belt
+Variant: Pre 3.11.0
+Variant: Current
 Requires Level 48
 Implicits: 1
 (15-25)% increased Stun and Block Recovery
 {tags:jewellery_attribute}+(20-40) to Intelligence
-Your Energy Shield starts at zero
-You cannot Recharge Energy Shield
-You cannot Regenerate Energy Shield
-{tags:jewellery_defense}You lose 5% of Energy Shield per second
-{tags:life}Life Leech is applied to Energy Shield instead while on Full Life
 {tags:jewellery_defense,life}Gain (4-6)% of Maximum Life as Extra Maximum Energy Shield
+{variant:1}Your Energy Shield starts at zero
+{variant:1}You cannot Recharge Energy Shield
+{variant:1}You cannot Regenerate Energy Shield
+{variant:1}{tags:jewellery_defense}You lose 5% of Energy Shield per second
+{variant:1}{tags:life}Life Leech effects are not removed at Full Life
+{variant:1}{tags:life}Life Leech is applied to Energy Shield instead while on Full Life
+{variant:2}Immortal Ambition
 ]],[[
 Soulthirst
 Cloth Belt

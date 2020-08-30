@@ -236,8 +236,10 @@ function buildMode:Init(dbFileName, buildName, buildXML, targetVersion)
 		{ stat = "ActiveMinionLimit", label = "Active Minion Limit", fmt = "d" },
 		{ stat = "AverageHit", label = "Average Hit", fmt = ".1f", compPercent = true },
 		{ stat = "AverageDamage", label = "Average Damage", fmt = ".1f", compPercent = true, flag = "attack" },
-		{ stat = "Speed", label = "Attack Rate", fmt = ".2f", compPercent = true, flag = "attack" },
-		{ stat = "Speed", label = "Cast Rate", fmt = ".2f", compPercent = true, flag = "spell" },
+		{ stat = "Speed", label = "Attack Rate", fmt = ".2f", compPercent = true, flag = "attack", condFunc = function(v,o) return (o.TriggerTime or 0) == 0 end },
+		{ stat = "Speed", label = "Cast Rate", fmt = ".2f", compPercent = true, flag = "spell", condFunc = function(v,o) return (o.TriggerTime or 0) == 0 end },
+		{ stat = "Speed", label = "Trigger Rate", fmt = ".2f", compPercent = true, condFunc = function(v,o) return (o.TriggerTime or 0) ~= 0 end },
+		{ stat = "WarcryCastTime", label = "Cast Time", fmt = ".2fs", compPercent = true, lowerIsBetter = true, flag = "warcry" },
 		{ stat = "HitSpeed", label = "Hit Rate", fmt = ".2f", compPercent = true },
 		{ stat = "TrapThrowingTime", label = "Trap Throwing Time", fmt = ".2fs", compPercent = true, lowerIsBetter = true, },
 		{ stat = "TrapCooldown", label = "Trap Cooldown", fmt = ".2fs", lowerIsBetter = true },
@@ -268,6 +270,7 @@ function buildMode:Init(dbFileName, buildName, buildXML, targetVersion)
 		{ stat = "CombinedAvg", label = "Combined Total Damage", fmt = ".1f", compPercent = true, flag = "showAverage", condFunc = function(v,o) return (v ~= o.AverageDamage and (o.TotalDot or 0) == 0) and (v ~= o.WithImpaleDPS or v ~= o.WithPoisonDPS or v ~= o.WithIgniteDPS or v ~= o.WithBleedDPS) end },
 		{ stat = "Cooldown", label = "Skill Cooldown", fmt = ".2fs", lowerIsBetter = true },
 		{ stat = "AreaOfEffectRadius", label = "AoE Radius", fmt = "d" },
+		{ stat = "BrandTicks", label = "Activations per Brand", fmt = "d", flag = "brand" },
 		{ stat = "ManaCost", label = "Mana Cost", fmt = "d", compPercent = true, lowerIsBetter = true, condFunc = function() return true end },
 		{ },
 		{ stat = "Str", label = "Strength", color = colorCodes.STRENGTH, fmt = "d" },
@@ -318,9 +321,13 @@ function buildMode:Init(dbFileName, buildName, buildXML, targetVersion)
 		{ stat = "SpellDodgeChance", label = "Spell Dodge Chance", fmt = "d%%" },
 		{ },
 		{ stat = "FireResist", label = "Fire Resistance", fmt = "d%%", color = colorCodes.FIRE, condFunc = function() return true end, resistOverCapStat = "FireResistOverCap"},
+		{ stat = "FireResistOverCap", label = "Fire Res. Over Max", fmt = "d%%", hideStat = true },
 		{ stat = "ColdResist", label = "Cold Resistance", fmt = "d%%", color = colorCodes.COLD, condFunc = function() return true end, resistOverCapStat = "ColdResistOverCap" },
+		{ stat = "ColdResistOverCap", label = "Cold Res. Over Max", fmt = "d%%", hideStat = true },
 		{ stat = "LightningResist", label = "Lightning Resistance", fmt = "d%%", color = colorCodes.LIGHTNING, condFunc = function() return true end, resistOverCapStat = "LightningResistOverCap" },
+		{ stat = "LightningResistOverCap", label = "Lightning Res. Over Max", fmt = "d%%", hideStat = true },
 		{ stat = "ChaosResist", label = "Chaos Resistance", fmt = "d%%", color = colorCodes.CHAOS, condFunc = function() return true end, resistOverCapStat = "ChaosResistOverCap" },
+		{ stat = "ChaosResistOverCap", label = "Chaos Res. Over Max", fmt = "d%%", hideStat = true },
 	}
 	self.minionDisplayStats = {
 		{ stat = "AverageDamage", label = "Average Damage", fmt = ".1f", compPercent = true },
@@ -1150,11 +1157,13 @@ function buildMode:AddDisplayStatList(statList, actor)
 							resistOverCapStatLabel = " ^7(+"..self:FormatStat(statData, resistOverCapStatVal).."^7)"
 						end
 					end
-					t_insert(statBoxList, {
-						height = 16,
-						labelColor..statData.label..":",
-						self:FormatStat(statData, statVal)..resistOverCapStatLabel,
-					})
+					if not (statData.hideStat) then
+						t_insert(statBoxList, {
+							height = 16,
+							labelColor..statData.label..":",
+							self:FormatStat(statData, statVal)..resistOverCapStatLabel,
+						})
+					end
 				end
 			end
 		elseif not statBoxList[#statBoxList] or statBoxList[#statBoxList][1] then
