@@ -3,6 +3,19 @@
 return {
 -- Belt
 [[
+Arn's Anguish
+Cloth Belt
+League: Ritual
+Requires Level 68
+Implicits: 1
+(15-25)% increased Stun and Block Recovery
+{tags:jewellery_defense}+(600-700) to Armour
+{tags:life}(12-15)% increased maximum Life
+{tags:jewellery_resistance}+(40-60)% to Fire Resistance
+Modifiers to Minimum Endurance Charges instead apply to Minimum Brutal Charges
+Maximum Brutal Charges is equal to Maximum Endurance Charges
+Gain Brutal Charges instead of Endurance Charges
+]],[[
 Ascent From Flesh
 Chain Belt
 Source: prophecy{Thaumaturgical History IV}
@@ -59,6 +72,18 @@ Implicits: 1
 {variant:2}{tags:jewellery_defense}20% increased maximum Energy Shield
 {tags:jewellery_defense}50% increased Energy Shield Recharge Rate
 ]],[[
+Replica Bated Breath
+Chain Belt
+League: Heist
+Requires Level 22
+Implicits: 1
+{tags:jewellery_defense}+(9-20) to maximum Energy Shield
+{tags:jewellery_attribute}+(15-25) to Intelligence
+10% increased Damage
+50% increased Fishing Pool Consumption
+20% increased Fishing Range
+(20-30)% increased Rarity of Fish Caught
+]],[[
 Bear's Girdle
 Leather Belt
 League: Harvest
@@ -96,6 +121,18 @@ Implicits: 1
 Rampage
 1% increased Rarity of Items found per 15 Rampage Kills
 ]],[[
+Chains of Emancipation
+Chain Belt
+League: Heist
+Requires Level 61
+Implicits: 1
+{tags:jewellery_defense}+(9-20) to maximum Energy Shield
+{tags:life}+(60-80) to maximum Life
+{tags:jewellery_resistance}+(17-23)% to Chaos Resistance
+Enemy Hits inflict Temporal Chains on you
+When you lose Temporal Chains you gain maximum Rage
+Immune to Curses while you have at least 25 Rage
+]],[[
 Coward's Chains
 Chain Belt
 League: Incursion
@@ -107,7 +144,7 @@ Implicits: 1
 {tags:jewellery_attribute}+(10-15) to all Attributes
 (5-10)% increased Movement Speed
 Damage from Enemies Hitting you is Unlucky while you are Cursed with Vulnerability
-You are cursed with Level 10 Vulnerability
+{tags:caster}You are cursed with Vulnerability, with 40% increased Effect
 ]],[[
 Coward's Legacy
 Chain Belt
@@ -118,9 +155,9 @@ Implicits: 1
 {tags:jewellery_defense}+(9-20) to maximum Energy Shield
 {tags:jewellery_attribute}+(15-20) to all Attributes
 (5-10)% increased Movement Speed
-50% increased Effect of Curses on you
+{tags:caster}50% increased Effect of Curses on you
 {tags:life}You count as on Low Life while you are Cursed with Vulnerability
-You are Cursed with Level 20 Vulnerability
+{tags:caster}You are Cursed with Vulnerability, with 80% increased Effect
 ]],[[
 Cyclopean Coil
 Leather Belt
@@ -185,6 +222,19 @@ Implicits: 1
 {variant:7}Your Flasks grant (20-30)% chance to Freeze during any Flask Effect
 {variant:4}Your Flasks grant 10% chance to Shock during any Flask Effect
 {variant:8}Your Flasks grant (20-30)% chance to Shock during any Flask Effect
+]],[[
+The Druggery
+Cloth Belt
+League: Heist
+Requires Level 48
+Implicits: 1
+(15-25)% increased Stun and Block Recovery
+{tags:jewellery_attribute}+(20-30) to all Attributes
+(15-25)% increased Flask Charges gained
+(10-20)% increased Flask Charges used
+(10-20)% increased Flask Effect Duration
+Life Flasks gain 1 Charge every 3 seconds
+100% of Life Recovery from Flasks is applied to nearby Allies instead of You
 ]],[[
 Dyadian Dawn
 Heavy Belt
@@ -256,29 +306,57 @@ Debuffs on you expire (15-20)% faster
 ]],[[
 Gluttony
 Leather Belt
+Variant: Pre 3.12.0
+Variant: Current
 Requires Level 48
 Implicits: 1
 {tags:life}+(25-40) to maximum Life
+{variant:1}Trigger Level 30 Poacher's Mark when you Hit a Rare or Unique Enemy
 {tags:life}+(60-80) to maximum Life
-Culling Strike against Enemies Cursed with Poacher's Mark
-Curse Enemies with Level 30 Poacher's Mark on Hit, which can apply to Hexproof Enemies
+{variant:1}Culling Strike against Enemies Cursed with Poacher's Mark
+{variant:2}You have Culling Strike against Cursed Enemies
+{variant:2}(20-28) Life gained for each Cursed Enemy hit by your Attacks
+{variant:2}(10-14) Mana gained for each Cursed Enemy hit by your Attacks
 Take (100-200) Physical Damage when you use a Movement Skill
-You have no Armour or Energy Shield
+You have no Armour or Maximum Energy Shield
+]],[[
+Graven's Secret
+Cloth Belt
+League: Ritual
+Requires Level 68
+Implicits: 1
+(15-25)% increased Stun and Block Recovery
+{tags:jewellery_defense}+(60-70) to Energy Shield
+{tags:mana}(16-20)% increased maximum Mana
+{tags:jewellery_resistance}+(40-60)% to Lightning Resistance
+Modifiers to Minimum Power Charges instead apply to Minimum Absorption Charges
+Maximum Absorption Charges is equal to Maximum Power Charges
+Gain Absorption Charges instead of Power Charges
 ]],[[
 Headhunter
 Leather Belt
 League: Nemesis
-Variant: {2_6}Pre 3.0.0
-Variant: Current
 Requires Level 40
 Implicits: 1
 {tags:life}+(25-40) to maximum Life
 {tags:jewellery_attribute}+(40-55) to Strength
 {tags:jewellery_attribute}+(40-55) to Dexterity
 {tags:life}+(50-60) to maximum Life
-{variant:1}(20-30)% increased Damage against Rare monsters
-{variant:2}(20-30)% increased Damage with Hits against Rare monsters
+(20-30)% increased Damage with Hits against Rare monsters
 When you Kill a Rare monster, you gain its mods for 20 seconds
+]],[[
+Replica Headhunter
+Leather Belt
+League: Heist
+Requires Level 40
+Implicits: 1
+{tags:life}+(25-40) to maximum Life
+{tags:jewellery_attribute}+(40-55) to Strength
+{tags:jewellery_attribute}+(40-55) to Dexterity
+{tags:life}+(50-60) to maximum Life
+(20-30)% increased Damage with Hits against Magic monsters
+20% chance when you Kill a Magic Monster to gain
+its Non-Bloodline Modifiers for 20 seconds
 ]],[[
 Hyperboreus
 Leather Belt
@@ -347,7 +425,6 @@ Implicits: 1
 {tags:life}+(25-40) to maximum Life
 {tags:jewellery_attribute}+(15-20) to all Attributes
 {tags:life}+(50-70) to maximum Life
-25% reduced effect of Offerings
 You can have an Offering of each type
 Offering Skills have 50% reduced Duration
 ]],[[
@@ -428,6 +505,19 @@ Your Minions use your Flasks when summoned
 Minions have (40-25)% reduced Flask Charges used
 Minions have (50-80)% increased Flask Effect Duration
 ]],[[
+Olesya's Delight
+Cloth Belt
+League: Ritual
+Requires Level 68
+Implicits: 1
+(15-25)% increased Stun and Block Recovery
+{tags:jewellery_defense}+(600-700) to Evasion Rating
+{tags:jewellery_resistance}+(40-60)% to Cold Resistance
+(8-12)% increased Movement Speed
+Modifiers to Minimum Frenzy Charges instead apply to Minimum Affliction Charges
+Maximum Affliction Charges is equal to Maximum Frenzy Charges
+Gain Affliction Charges instead of Frenzy Charges
+]],[[
 Perandus Blazon
 Cloth Belt
 Variant: Pre 1.1.0
@@ -469,6 +559,31 @@ Implicits: 1
 {variant:2}{tags:jewellery_elemental,attack}Adds 1 to (30-34) Lightning Damage to Attacks
 {tags:jewellery_resistance}+(6-8)% to all Elemental Resistances
 {tags:jewellery_elemental,attack}30% increased Elemental Damage with Attack Skills during any Flask Effect
+]],[[
+Replica Prismweave
+Rustic Sash
+League: Heist
+Requires Level 25
+Implicits: 1
+(12-24)% increased Global Physical Damage
+{tags:jewellery_elemental,caster}Adds (7-8) to (15-16) Fire Damage to Spells
+{tags:jewellery_elemental,caster}Adds (5-6) to (12-14) Cold Damage to Spells
+{tags:jewellery_elemental,caster}Adds 1 to (30-34) Lightning Damage to Spells
+{tags:jewellery_resistance}+(6-8)% to all Elemental Resistances
+{tags:jewellery_elemental}10% increased Elemental Damage
+{tags:jewellery_elemental}30% increased Elemental Damage during any Flask Effect
+]],[[
+Pyroshock Clasp
+Leather Belt
+League: Heist
+Requires Level 43
+Implicits: 1
+{tags:life}+(25-40) to maximum Life
+{tags:jewellery_attribute}+(30-40) to Dexterity
+{tags:jewellery_defense}+(300-500) to Evasion Rating
+(10-15)% increased Duration of Elemental Ailments on Enemies
+Enemies Ignited by you have (10-15)% of Physical Damage they deal converted to Fire
+Enemies Shocked by you have (10-15)% of Physical Damage they deal converted to Lightning
 ]],[[
 The Retch
 Rustic Sash
@@ -512,6 +627,18 @@ Implicits: 1
 Minions have 5% chance to Taunt on Hit with Attacks
 Your Minions spread Caustic Ground on Death, dealing 20% of their maximum Life as Chaos Damage per second
 ]],[[
+Replica Siegebreaker
+Heavy Belt
+League: Heist
+Requires Level 44
+Implicits: 1
+{tags:jewellery_attribute}+(25-35) to Strength
+{tags:jewellery_defense}(6-10)% increased maximum Energy Shield
+{tags:life}(6-10)% increased maximum Life
+{tags:jewellery_resistance}+(15-25)% to Fire Resistance
+Your Minions spread Burning Ground on Death, dealing 20% of their maximum Life as Fire Damage per second
+{tags:attack}Minions have 5% chance to Maim Enemies on Hit with Attacks
+]],[[
 Soul Tether
 Cloth Belt
 Variant: Pre 3.11.0
@@ -528,6 +655,16 @@ Implicits: 1
 {variant:1}{tags:life}Life Leech effects are not removed at Full Life
 {variant:1}{tags:life}Life Leech is applied to Energy Shield instead while on Full Life
 {variant:2}Immortal Ambition
+]],[[
+Replica Soul Tether
+Cloth Belt
+League: Heist
+Requires Level 48
+Implicits: 1
+(15-25)% increased Stun and Block Recovery
+{tags:jewellery_attribute}+(20-40) to Strength
+{tags:jewellery_defense}Gain (4-6)% of Maximum Life as Extra Maximum Energy Shield
+Corrupted Soul
 ]],[[
 Soulthirst
 Cloth Belt
@@ -605,6 +742,18 @@ Implicits: 1
 80% reduced Trap Duration
 25% increased Light Radius
 Traps trigger at the end of their Duration
+]],[[
+Survivor's Guilt
+Heavy Belt
+League: Ritual
+Requires Level 52
+Implicits: 1
+{tags:jewellery_attribute}+(25-35)% to Strength
+{tags:jewellery_defense}+(800-1200)% to Armour
+{tags:life}Regenerate (50-70) Life per second
+20% increased Stun Threshold
+{tags:jewellery_defense}10% reduced Armour per 50 Strength
+Imbalanced Guard
 ]],[[
 Umbilicus Immortalis
 Leather Belt

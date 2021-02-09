@@ -16,6 +16,16 @@ Requires Level 75, 100 Str
 {variant:1}Life and Mana Leech from Critical Strikes are instant
 {variant:2}You have Vaal Pact if you've dealt a Critical Strike Recently
 ]],[[
+Replica Atziri's Acuity
+Vaal Gauntlets
+League: Heist
+Requires Level 63, 100 Str
++(60-80) to Intelligence
+(25-35)% increased Global Critical Strike Chance
+(200-220)% increased Armour
++(60-75) to maximum Life
+You have Perfect Agony if you've dealt a Critical Strike recently
+]],[[
 Craiceann's Pincers
 Titan Gauntlets
 League: Bestiary
@@ -30,7 +40,7 @@ your maximum number of Crab Barriers
 ]],[[
 Doryani's Fist
 Vaal Gauntlets
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Pre 3.5.0
 Variant: Pre 3.10.0
 Variant: Current
@@ -46,7 +56,7 @@ Requires Level 63, 100 Str
 {variant:3,4}Adds (90-135) to (315-360) Lightning Damage to Spells while Unarmed
 {variant:1,2,3}+30 Energy Shield gained on Killing a Shocked Enemy
 {variant:4}+(200-250) Energy Shield gained on Killing a Shocked Enemy
-{variant:4}30% increased Effect of Shock
+{variant:4}30% increased Effect of Lightning Ailments
 ]],[[
 Empire's Grasp
 Goliath Gauntlets
@@ -168,7 +178,7 @@ Deerskin Gloves
 League: Legion
 Source: Drops from Eternal Legion
 Variant: Pre 1.1.0
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Pre 3.7.0
 Variant: Current
 Requires Level 21, 33 Dex
@@ -181,14 +191,24 @@ Requires Level 21, 33 Dex
 {variant:4}Your Critical Strike Multiplier is 300%
 (60-80)% increased Evasion Rating
 ]],[[
+Mercenary's Lot
+Slink Gloves
+League: Heist
+Requires Level 70, 95 Dex
++(80-120) to Evasion Rating
+(5-8)% increased Attack and Cast Speed
+Mark Skills have (10-15)% increased Cast Speed
+(30-50)% increased Damage with Hits and Ailments against Marked Enemy
+Your Mark transfers to another Enemy when Marked Enemy dies
+]],[[
 Oskarm
 Nubuck Gloves
 Requires Level 52, 50 Dex
+Trigger Level 10 Assassin's Mark when you Hit a Rare or Unique Enemy
 (30-40)% increased Accuracy Rating
 +(40-50) to maximum Life
 +(-20-10)% to Chaos Resistance
 (7-8)% chance to Dodge Spell Damage
-Curse Enemies with Level 10 Assassin's Mark on Hit
 2% increased Attack Critical Strike Chance per 200 Accuracy Rating
 ]],[[
 Painseeker
@@ -213,6 +233,17 @@ Grants level 22 Blight Skill
 Blight has (20-30)% increased Hinder Duration
 You cannot be Hindered
 ]],[[
+Replica Allelopathy
+Sorcerer Gloves
+League: Heist
+Requires Level 69, 97 Int
+Grants Level 22 Wintertide Brand
+(20-30)% increased Damage over Time
+(100-120)% increased Energy Shield
+10% increased Area of Effect
+Immune to Chill
+Wintertide Brand has (20-30)% increased Chill Effect
+]],[[
 Asenath's Gentle Touch
 Silk Gloves
 League: Legion
@@ -227,10 +258,11 @@ Requires Level 25, 39 Int
 {variant:1,2}+(20-30) to maximum Mana
 {variant:3}+(60-80) to maximum Mana
 {variant:1}Curse Enemies with Temporal Chains on Hit
-{variant:2,3}Curse Enemies with level 10 Temporal Chains on Hit
+{variant:2,3}Curse Enemies with Temporal Chains on Hit, with 40% increased Effect
 {variant:3}Non-Aura Curses you inflict are not removed from Dying Enemies
 {variant:3}Enemies near Corpses affected by your Curses are Blinded
-{variant:3}Enemies killed near Corpses affected by your Curses explode, dealing 3% of their Life as Physical Damage
+{variant:3}Enemies killed near Corpses affected by your Curses explode, dealing
+{variant:3}3% of their Life as Physical Damage
 ]],[[
 Demon Stitcher
 Satin Gloves
@@ -281,6 +313,17 @@ Minions have 10% reduced Movement Speed
 Minions have +40% to Cold Resistance
 Minions gain 20% of Physical Damage as Extra Cold Damage
 ]],[[
+Replica Grip of the Council
+Arcanist Gloves
+League: Heist
+Requires Level 60, 95 Int
++30 to Strength
++(30-50) to maximum Life
++(20-40)% to Fire Resistance
+Minions have 10% reduced maximum Life
+Minions have +40% to Fire Resistance
+Minions gain 20% of Physical Damage as Extra Fire Damage
+]],[[
 Kalisa's Grace
 Samite Gloves
 Requires Level 55, 68 Int
@@ -290,10 +333,20 @@ Socketed Gems are Supported by Level 18 Faster Casting
 +(50-70) to maximum Life
 Gain +2% to Critical Strike Chance for 2 seconds when you Spend a total of 800 Mana
 ]],[[
+Replica Kalisa's Grace
+Samite Gloves
+League: Heist
+Requires Level 55, 68 Int
+Socketed Gems are Supported by Level 18 Unleash
++(20-30) to Intelligence
++(50-80) to maximum Energy Shield
++(50-70) to maximum Life
+Gain 40% increased Area of Effect for 2 seconds after Spending a total of 800 Mana
+]],[[
 Sadima's Touch
 Wool Gloves
 Variant: Pre 1.1.0
-Variant: {2_6}Pre 3.5.0
+Variant: Pre 3.5.0
 Variant: Current
 Requires Level 11
 Adds 4 to 8 Fire Damage to Attacks
@@ -306,7 +359,7 @@ Adds 1 to 13 Lightning Damage to Attacks
 Voidbringer
 Conjurer Gloves
 Variant: Pre 2.6.0
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Pre 3.11.0
 Variant: Current
 Requires Level 55, 79 Int
@@ -355,16 +408,13 @@ You have Crimson Dance while you have Cat's Stealth
 ]],[[
 Flesh and Spirit
 Ironscale Gauntlets
-Variant: {2_6}Pre 3.5.0
-Variant: Current
 League: Rampage
 Requires Level 15
 (6-9)% increased Attack Speed
 (80-120)% increased Armour and Evasion
 (3-4) Life Regenerated per second
 Recover 20% of your Maximum Life on Rampage
-{variant:1}Gain 5 Souls for Vaal Skills on Rampage
-{variant:2}Kills grant an additional Vaal Soul if you have Rampaged Recently
+Kills grant an additional Vaal Soul if you have Rampaged Recently
 Rampage
 ]],[[
 Haemophilia
@@ -468,6 +518,15 @@ Requires Level 37, 29 Str, 29 Int
 With a Ghastly Eye Jewel Socketed, Minions have +1000 to Accuracy Rating
 With a Hypnotic Eye Jewel Socketed, gain Arcane Surge on Hit with Spells
 ]],[[
+Hand of the Fervent
+Zealot Gloves
+League: Ritual
+Requires Level 43, 34 Str, 34 Int
+(70-130)% increased Armour and Energy Shield
++(50-70) to maximum Life
+Gain Sacrificial Zeal when you use a Skill, dealing you 150% of the Skill's Mana Cost as Physical Damage per Second
+Hits Overwhelm (10-15)% of Physical Damage Reduction while you have Sacrificial Zeal
+]],[[
 Hands of the High Templar
 Crusader Gloves
 Requires Level 66, 51 Str, 51 Int
@@ -494,7 +553,7 @@ Legion Gloves
 League: Synthesis
 Source: Drops from unique{Synthete Nightmare} in normal{The Cortex}
 Requires Level 57, 44 Str, 44 Int
-+(25-35) to all Attributes
++(15-25) to all Attributes
 (150-200)% increased Armour and Energy Shield
 50% reduced Maximum Recovery per Life Leech
 (6-10)% increased Attack and Cast Speed
@@ -528,7 +587,7 @@ Variant: Pre 1.2.0
 Variant: Current
 Requires Level 7, 17 Dex
 (40-60)% increased Stun Recovery
-Curses in this item are reflected back to you
+Hexes applied by Socketed Curse Skills are Reflected back to you
 You cannot be Chilled for 3 seconds after being Chilled
 You cannot be Frozen for 3 seconds after being Frozen
 You cannot be Ignited for 3 seconds after being Ignited
@@ -600,6 +659,17 @@ Requires Level 43, 34 Str, 34 Int
 {variant:1}Fire Skills have 20% chance to Poison on Hit
 {variant:2}Cold Skills have 20% chance to Poison on Hit
 {variant:3}Lightning Skills have 20% chance to Poison on Hit
+]],[[
+Replica Volkuur's Guidance
+Zealot Gloves
+League: Heist
+Requires Level 43, 34 Str, 34 Int
+Adds (17-23) to (29-31) Chaos Damage
++(50-70) to maximum Life
++(29-41)% to Chaos Resistance
+Your Chaos Damage can Ignite
+Chaos Skills have 20% chance to Ignite
+50% less Ignite Duration
 ]],
 -- Gloves: Evasion/Energy Shield
 [[
@@ -688,7 +758,7 @@ Strapped Mitts
 Variant: Pre 1.0.0
 Variant: Pre 2.2.0
 Variant: Pre 2.5.0
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Current
 Requires Level 16, 14 Dex, 14 Int
 {variant:1,2}+60% to Global Critical Strike Multiplier
@@ -747,7 +817,7 @@ Shadows and Dust
 Clasped Mitts
 League: Rampage
 Variant: Pre 2.2.0
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Current
 Requires Level 31, 25 Dex, 25 Int
 (20-30)% increased Global Critical Strike Chance
@@ -762,7 +832,7 @@ Rampage
 ]],[[
 Snakebite
 Assassin's Mitts
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Pre 3.9.0
 Variant: Current
 Requires Level 58, 45 Dex, 45 Int
@@ -797,7 +867,7 @@ Socketed Gems are Supported by level 18 Added Lightning Damage
 {variant:2}Adds 1 to 40 Lightning Damage to Attacks
 10% increased Attack Speed
 +(25-30) to maximum Energy Shield
-100% increased Shock Duration on Enemies
 10% increased Stun Duration on Enemies
+100% increased Duration of Lightning Ailments
 ]],
 }

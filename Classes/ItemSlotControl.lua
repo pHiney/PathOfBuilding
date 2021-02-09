@@ -27,7 +27,7 @@ local ItemSlotClass = newClass("ItemSlotControl", "DropDownControl", function(se
 	self.items = { }
 	self.selItemId = 0
 	self.slotName = slotName
-	self.slotNum = tonumber(slotName:match("%d+"))
+	self.slotNum = tonumber(slotName:match("%d+$") or slotName:match("%d+"))
 	if slotName:match("Flask") then
 		self.controls.activate = new("CheckBoxControl", {"RIGHT",self,"LEFT"}, -2, 0, 20, nil, function(state)
 			self.active = state
@@ -108,7 +108,7 @@ function ItemSlotClass:ReceiveDrag(type, value, source)
 	if value.id and self.itemsTab.items[value.id] then
 		self:SetSelItemId(value.id)
 	else
-		local newItem = new("Item", self.itemsTab.build.targetVersion, value.raw)
+		local newItem = new("Item", value.raw)
 		newItem:NormaliseQuality()
 		self.itemsTab:AddItem(newItem, true)
 		self:SetSelItemId(newItem.id)
@@ -126,8 +126,13 @@ function ItemSlotClass:Draw(viewPort)
 	self:DrawControls(viewPort)
 	if not main.popups[1] and self.nodeId and (self.dropped or (self:IsMouseOver() and (self.otherDragSource or not self.itemsTab.selControl))) then
 		SetDrawLayer(nil, 15)
+		local viewerY
+		if self.DropDownControl.dropUp and self.DropDownControl.dropped then
+			viewerY = y + 20
+		else
+			viewerY = m_min(y - 300 - 5, viewPort.y + viewPort.height - 304)
+		end
 		local viewerX = x
-		local viewerY = m_min(y - 300 - 5, viewPort.y + viewPort.height - 304)
 		SetDrawColor(1, 1, 1)
 		DrawImage(nil, viewerX, viewerY, 304, 304)
 		local viewer = self.itemsTab.socketViewer

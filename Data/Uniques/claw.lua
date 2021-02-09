@@ -19,9 +19,22 @@ Socketed Gems are Supported by level 12 Fortify
 Reflects (71-90) Physical Damage to Melee Attackers
 15% Chance to Block
 ]],[[
+Replica Advancing Fortress
+Gut Ripper
+League: Heist
+Requires Level 46, 80 Dex, 80 Int
+Implicits: 1
++44 Life gained for each Enemy hit by Attacks
+Socketed Gems are Supported by Level 12 Cast when Damage Taken
+15% Chance to Block Attack Damage
+(100-120)% increased Physical Damage
++(30-50) to maximum Life
+50% increased Defences from Equipped Shield
+Adds 45 to 75 Fire Damage if you've Blocked Recently
+]],[[
 Allure
 Vaal Claw
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Current
 Requires Level 66, 131 Dex, 95 Int
 Implicits: 1
@@ -34,13 +47,26 @@ Adds (15-20) to (30-40) Physical Damage
 {variant:1}You gain Phasing for 3 seconds on using a Vaal Skill
 {variant:2}You gain Phasing for 10 seconds on using a Vaal Skill
 ]],[[
+Replica Allure
+Vaal Claw
+League: Heist
+Requires Level 66, 95 Dex, 131 Int
+Implicits: 1
+2% of Physical Attack Damage Leeched as Life
+(110-130)% increased Physical Damage
+Adds (15-20) to (30-40) Physical Damage
+(8-12)% increased Attack Speed
+Gain +50 Life when you Taunt an Enemy
+You gain Onslaught for 1 seconds on Killing Taunted Enemies
+Enemies Taunted by you take 10% increased Damage
+]],[[
 Al Dhih
 Timeworn Claw
 League: Legion
 Source: Drops from Maraketh Legion
 Variant: Pre 2.0.0
 Variant: Pre 2.6.0
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Pre 3.7.0
 Variant: Pre 3.11.0
 Variant: Current
@@ -62,7 +88,7 @@ Implicits: 3
 ]],[[
 Bloodseeker
 Hellion's Paw
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Current
 Requires Level 62, 131 Dex, 95 Int
 Implicits: 1
@@ -73,8 +99,7 @@ Adds 10 to 12 Physical Damage
 5% increased Attack Speed
 1.2% of Physical Attack Damage Leeched as Life
 5% increased Movement Speed
-{variant:1}Life Leech from Hits with this Weapon applies instantly
-{variant:2}Life Leech from Hits with this Weapon is instant
+Life Leech from Hits with this Weapon is instant
 ]],[[
 Cybil's Paw
 Thresher Claw
@@ -137,16 +162,16 @@ League: Breach
 Source: Drops in Esh Breach or from unique{Esh, Forked Thought}
 Upgrade: Upgrades to unique{Hand of Wisdom and Action} using currency{Blessing of Esh}
 Variant: Pre 2.6.0
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Current
 Requires Level 22, 41 Dex, 41 Int
 Implicits: 2
 {variant:1}+10 Life gained for each Enemy hit by Attacks
 {variant:2,3}+12 Life gained for each Enemy hit by Attacks
-{variant:1,2,3}(20-25)% increased Elemental Damage with Attack Skills
+(20-25)% increased Elemental Damage with Attack Skills
 Adds 1 to (50-60) Lightning Damage
 (10-15)% increased Attack Speed
-{variant:1,2}Adds 1 to 3 Lightning Damage to Attacks per 10 Intelligence
+{variant:1,2}Adds 1 to 3 Lightning Damage to Attacks with this Weapon per 10 Intelligence
 {variant:3}Adds 1 to 5 Lightning Damage to Attacks with this Weapon per 10 Intelligence
 ]],[[
 Hand of Wisdom and Action
@@ -154,16 +179,16 @@ Imperial Claw
 League: Breach
 Source: Upgraded from unique{Hand of Thought and Motion} using currency{Blessing of Esh}
 Variant: Pre 2.6.0
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Current
 Requires Level 68, 131 Dex, 95 Int
 Implicits: 2
 {variant:1}+25 Life gained for each Enemy hit by Attacks
 {variant:2,3}+46 Life gained for each Enemy hit by Attacks
-{variant:1,2,3}(20-25)% increased Elemental Damage with Attack Skills
+(20-25)% increased Elemental Damage with Attack Skills
 (8-12)% increased Dexterity
 (8-12)% increased Intelligence
-{variant:1,2}Adds 1 to 6 Lightning Damage to Attacks per 10 Intelligence
+{variant:1,2}Adds 1 to 6 Lightning Damage to Attacks with this Weapon per 10 Intelligence
 {variant:3}Adds 1 to 10 Lightning Damage to Attacks with this Weapon per 10 Intelligence
 1% increased Attack Speed per 25 Dexterity
 ]],[[
@@ -194,6 +219,17 @@ Adds 2 to 10 Physical Damage
 100% increased Claw Physical Damage when on Low Life
 100% increased Accuracy Rating when on Low Life
 ]],[[
+Replica Last Resort
+Nailed Fist
+League: Heist
+Implicits: 1
++3 Life gained for each Enemy hit by Attacks
+50% increased Attack Speed when on Low Life
+(80-100)% increased Physical Damage
+100% increased Accuracy Rating when on Low Life
+200% increased Damage with Claws while on Low Life
+Deal no Damage when not on Low Life
+]],[[
 Law of the Wilds
 Hellion's Paw
 League: Harvest
@@ -210,7 +246,7 @@ Mortem Morsu
 Fright Claw
 Variant: Pre 2.2.0
 Variant: Pre 2.6.0
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Current
 Requires Level 34, 61 Dex, 61 Int
 Implicits: 2
@@ -229,7 +265,7 @@ Implicits: 2
 Ornament of the East
 Gut Ripper
 Variant: Pre 2.6.0
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Current
 Requires Level 46, 80 Dex, 80 Int
 Implicits: 2
@@ -245,15 +281,12 @@ Hits can't be Evaded
 ]],[[
 Rive
 Terror Claw
-Variant: {2_6}Pre 3.0.0
-Variant: Current
 Requires Level 70, 113 Dex, 113 Int
 Implicits: 1
 2% of Physical Attack Damage Leeched as Life
 (60-80)% increased Physical Damage
 Adds (25-35) to (50-65) Physical Damage
-{variant:1}Causes Bleeding on Hit
-{variant:2}25% chance to cause Bleeding on Hit
+25% chance to cause Bleeding on Hit
 2% increased Physical Damage over time per 10 Dexterity
 1% increased Bleed Duration per 12 Intelligence
 30% Chance to cause Bleeding Enemies to Flee on hit

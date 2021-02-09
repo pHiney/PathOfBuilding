@@ -6,7 +6,7 @@ return {
 Abyssus
 Ezomyte Burgonet
 Variant: Pre 2.2.0
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Current
 Requires Level 60, 138 Str
 Adds 40 to 60 Physical Damage to Attacks
@@ -16,6 +16,18 @@ Adds 40 to 60 Physical Damage to Attacks
 {variant:3}+(100-125)% to Melee Critical Strike Multiplier
 (100-120)% increased Armour
 (40-50)% increased Physical Damage taken
+]],[[
+Replica Abyssus
+Ezomyte Burgonet
+League: Heist
+Requires Level 60, 138 Str
++(20-25) to all Attributes
+Adds 40 to 75 Fire Damage to Attacks
+Adds 30 to 65 Cold Damage to Attacks
+Adds 10 to 130 Lightning Damage to Attacks
++(100-125)% to Melee Critical Strike Multiplier
+(100-120)% increased Armour
+(40-50)% increased Elemental Damage taken
 ]],[[
 The Baron
 Close Helmet
@@ -72,7 +84,7 @@ Requires Level 65, 148 Str
 Armour is increased by Uncapped Fire Resistance
 ]],[[
 Hrimnor's Resolve
-Samite Helmet
+Samnite Helmet
 Variant: Pre 2.0.0
 Variant: Pre 2.6.0
 Variant: Current
@@ -99,6 +111,17 @@ Requires Level 64, 138 Dex
 25% chance to Avoid being Chilled
 Cannot be Frozen
 8% reduced Mana Reserved
+]],[[
+Replica Alpha's Howl
+Sinner Tricorne
+League: Heist
+Requires Level 64, 138 Dex
++4 to Level of Socketed Herald Gems
+(80-100)% increased Evasion Rating
++(20-30)% to Chaos Resistance
+25% chance to Avoid being Poisoned
+8% reduced Mana Reserved
+You cannot be Hindered
 ]],[[
 Assailum
 Sinner Tricorne
@@ -132,7 +155,7 @@ Reflects 4 Physical Damage to Melee Attackers
 Heatshiver
 Leather Hood
 Upgrade: Upgrades to unique{Frostferno} via prophecy{A Vision of Ice and Fire}
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Current
 Requires Level 20, 46 Dex
 {variant:1}+1 to Level of Socketed Fire Gems
@@ -160,7 +183,7 @@ Socketed Gems are Supported by Level 30 Cold to Fire
 Obscurantis
 Lion Pelt
 Source: Drops from unique{Guardian of the Chimera}
-Variant: {2_6}Pre 3.5.0
+Variant: Pre 3.5.0
 Variant: Current
 Requires Level 70, 150 Dex
 {variant:1}+(300-500) to Accuracy Rating
@@ -283,18 +306,15 @@ Requires Level 54, 112 Int
 ]],[[
 Crown of Eyes
 Hubris Circlet
-Variant: {2_6}Pre 3.5.0
-Variant: Pre 3.9.0
+Variant: Pre 3.7.0
 Variant: Current
 Requires Level 69, 154 Int
-{variant:2}+(200-250) to Accuracy Rating
-{variant:3}+(300-350) to Accuracy Rating
+{variant:1}+(200-250) to Accuracy Rating
+{variant:2}+(300-350) to Accuracy Rating
 (120-150)% increased Energy Shield
 −30% to Fire Resistance
-{variant:1,2}(0.4-0.8)% of Physical Attack Damage Leeched as Life
-{variant:3}(0.4-0.8)% of Attack Damage Leeched as Life
-{variant:1,2}(0.2-0.4)% of Physical Attack Damage Leeched as Mana
-{variant:3}(0.2-0.4)% of Attack Damage Leeched as Mana
+(0.4-0.8)% of Attack Damage Leeched as Life
+(0.2-0.4)% of Attack Damage Leeched as Mana
 Increases and Reductions to Spell Damage also apply to Attacks at 150% of their value
 ]],[[
 Crown of Thorns
@@ -311,7 +331,7 @@ Pain Attunement
 Martyr's Crown
 Vine Circlet
 Source: Upgraded from unique{Crown of Thorns} using prophecy{Pleasure and Pain}
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Current
 Requires Level 52
 {variant:1}+(260-300) to maximum Energy Shield
@@ -360,17 +380,15 @@ Eldritch Battery
 Doedre's Scorn
 Lunaris Circlet
 Variant: Pre 2.6.0
-Variant: {2_6}Pre 3.0.0
 Variant: Current
 Requires Level 39, 83 Int
 {variant:1}+1 to Level of Socketed Curse Gems
-{variant:2,3}+2 to Level of Socketed Curse Gems
-{variant:2,3}+(100-120) to maximum Energy Shield
+{variant:2}+2 to Level of Socketed Curse Gems
+{variant:2}+(100-120) to maximum Energy Shield
 +(20-30) to Intelligence
 (30-50)% increased Curse Duration
 20% increased Elemental Damage
-{variant:1,2}(10-20)% increased Damage per Curse on Enemy
-{variant:3}(10-20)% increased Damage with Hits and Ailments per Curse on Enemy
+(10-20)% increased Damage with Hits and Ailments per Curse on Enemy
 ]],[[
 Eber's Unification
 Hubris Circlet
@@ -484,7 +502,7 @@ Spell Skills cannot deal Critical Strikes except on final Repeat
 Rime Gaze
 Mind Cage
 Variant: Pre 2.6.0
-Variant: {2_6}Pre 3.5.0
+Variant: Pre 3.5.0
 Variant: Current
 Requires Level 65, 138 Int
 {variant:1}Socketed Gems are Supported by level 15 Concentrated Effect
@@ -545,8 +563,8 @@ Requires Level 69, 154 Int
 Adds 1 to (60-80) Lightning Damage to Spells and Attacks
 (130-170)% increased Energy Shield
 +(25-35)% to Lightning Resistance
-{variant:1}10% chance to Curse Enemies with a random Curse on Hit
-{variant:2}20% chance to Curse non-Cursed Enemies with a random Curse on Hit
+{variant:1}10% chance to Curse non-Cursed Enemies with a random Hex on Hit
+{variant:2}20% chance to Curse non-Cursed Enemies with a random Hex on Hit
 {variant:1}5% chance to create Shocked Ground when Hit
 ]],
 -- Helmet: Armour/Evasion
@@ -565,7 +583,7 @@ The Bringer of Rain
 Nightmare Bascinet
 Variant: Pre 1.1.0
 Variant: Pre 1.3.0
-Variant: {2_6}Pre 3.5.0
+Variant: Pre 3.5.0
 Variant: Current
 Requires Level 67, 62 Str, 85 Dex
 Socketed Gems are Supported by level 18 Melee Physical Damage
@@ -583,6 +601,16 @@ Adds 20 to 30 Physical Damage to Attacks
 {variant:3,4}20% chance to gain an Endurance Charge when you Block
 Extra gore
 Can't use Chest armour
+]],[[
+Crest of Desire
+Fluted Bascinet
+League: Heist
+Requires Level 58, 64 Str, 64 Dex
+Has 1 Socket
++(5-8) to Level of Socketed Gems
++(30-50)% to Quality of Socketed Gems
+Socketed Skills deal Double Damage
+(100-150)% increased Armour and Evasion
 ]],[[
 Deidbell
 Gilded Sallet
@@ -631,7 +659,7 @@ Variant: Current
 Requires Level 23, 28 Str, 28 Dex
 {variant:1}+100 to Accuracy Rating
 {variant:2}+300 to Accuracy Rating
-{variant:2}+500 to Accuracy Rating
+{variant:3}+500 to Accuracy Rating
 (40-60)% increased Armour and Evasion
 (20-30)% increased Rarity of Items found
 +30% to Lightning Resistance
@@ -664,6 +692,18 @@ Requires Level 68, 62 Str, 91 Int
 Gain (8-12)% of Physical Damage as Extra Chaos Damage while at maximum Power Charges
 You take 50% reduced Extra Damage from Critical Strikes while you have no Power Charges
 ]],[[
+Ancient Skull
+Bone Helmet
+League: Ritual
+Requires Level 73, 76 Str, 76 Int
+Implicits: 1
+Minions deal (15-20)% increased Damage
+(150-200)% increased Armour and Energy Shield
+Minions have (20-40)% reduced maximum Life
+Minions have (15-25)% increased Movement Speed
+Minions have 50% increased Critical Strike Chance per Maximum Power Charge you have
+Minions can hear the whispers for 5 seconds after they deal a Critical Strike
+]],[[
 The Brine Crown
 Prophet Crown
 Variant: Pre 3.5.0
@@ -684,7 +724,7 @@ Cannot be Frozen
 The Broken Crown
 Prophet Crown
 Variant: Pre 2.6.0
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Current
 Requires Level 63, 85 Str, 62 Int
 Socketed Gems are supported by level 20 Cast on Death
@@ -808,7 +848,7 @@ Recover (4-5)% of Life when a Spirit Charge expires or is consumed
 Malachai's Vision
 Praetor Crown
 Source: Use currency{Vaal Orb} on unique{Voll's Vision}
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Pre 3.11.0
 Variant: Current
 Requires Level 68, 62 Str, 91 Int
@@ -861,6 +901,17 @@ Nearby Allies have +(6-8)% to Critical Strike Multiplier per 100 Dexterity you h
 Nearby Allies have (2-4)% increased Cast Speed per 100 Intelligence you have
 1% reduced Mana Reserved per 250 total attributes
 ]],[[
+Maw of Mischief
+Bone Helmet
+League: Heist
+Requires Level 73, 76 Str, 76 Int
+Implicits: 1
+Minions deal (15-20)% increased Damage
+Grants Level 20 Death Wish Skill
++(45-65) to maximum Life
+(30-20)% reduced Mana Cost of Minion Skills
+Minions are Aggressive
+]],[[
 Memory Vault
 Praetor Crown
 Source: Drops from unique{The Enslaver}
@@ -874,7 +925,7 @@ Gain Armour equal to your Reserved Mana
 ]],[[
 Mindspiral
 Aventail Helmet
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Current
 Requires Level 37, 42 Str, 42 Int
 (10-15)% increased Cold Damage
@@ -903,6 +954,16 @@ Requires Level 22, 27 Str, 27 Int
 Reflects 1 to (180-220) Lightning Damage to Attackers on Block
 (18-22)% increased Global Defences
 Elemental Resistances are Zero
+]],[[
+Replica Veil of the Night
+Great Helmet
+League: Heist
+Requires Level 22, 27 Str, 27 Int
+(20-22)% increased Stun and Block Recovery
+40% reduced Light Radius
+Reflects 1 to (180-220) Lightning Damage to Attackers on Block
+Defences are Zero
+(18-22)% increased Elemental Resistances
 ]],[[
 Voll's Vision
 Praetor Crown
@@ -984,7 +1045,7 @@ The Gull
 Raven Mask
 League: Domination
 Variant: Pre 2.6.0
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Current
 Requires Level 38, 44 Dex, 44 Int
 {variant:2,3}Trigger level 1 Create Lesser Shrine when you Kill an Enemy
@@ -1002,7 +1063,7 @@ Requires Level 38, 44 Dex, 44 Int
 Heretic's Veil
 Deicide Mask
 Variant: Pre 2.6.0
-Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.0.0
 Variant: Current
 Requires Level 67, 73 Dex, 88 Int
 +(40-50) to maximum Energy Shield
@@ -1021,6 +1082,16 @@ Requires Level 28, 33 Dex, 33 Int
 +(20-30) to maximum Life
 +(20-30) to maximum Mana
 You and nearby allies gain 15% increased Damage
+]],[[
+Replica Leer Cast
+Festival Mask
+League: Heist
+Requires Level 28, 33 Dex, 33 Int
++(20-30) to Dexterity
++(20-30) to maximum Life
++(20-30) to maximum Mana
+60% reduced Mana Regeneration Rate
+You and nearby Allies have 30% increased Mana Regeneration Rate
 ]],[[
 Malachai's Simula
 Iron Mask
@@ -1114,5 +1185,26 @@ Requires Level 62, 79 Dex, 72 Int
 +(24-30)% to Chaos Resistance
 Enemies cannot Leech Mana from You
 Socketed Gems have 50% reduced Mana Cost
+]],[[
+Viridi's Veil
+Praetor Crown
+League: Ritual
+Requires Level 68, 62 Str, 91 Int
++(1-2) to Level of Socketed Gems
+(120-160)% increased Armour and Energy Shield
++(15-25)% to all Elemental Resistances
+Damage of Enemies Hitting you is Unlucky while you have a Magic Ring Equipped
+You are Hexproof if you have a Magic Ring in right slot
+Take no Extra Damage from Critical Strikes if you have a Magic Ring in left slot
+]],[[
+Willclash
+Golden Mask
+League: Heist
+Requires Level 35, 40 Dex, 40 Int
+(350-400)% increased Evasion and Energy Shield
++5% Chance to Block Spell Damage per Power Charge
+(3-5)% increased Elemental Damage per Power charge
+Gain a Power Charge every Second if you haven't lost Power Charges Recently
+Lose all Power Charges when you Block
 ]],
 }
